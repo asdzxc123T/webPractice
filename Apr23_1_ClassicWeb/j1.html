@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="j1Check.js"></script>
+        <script src="ljwValidChecker.js"></script>
+        <link rel="stylesheet" href="c1.css">
+    </head>
+    <body>
+        <form name="bmiForm" onsubmit="return check()"
+         action="http://localhost:8888/bmi.res" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        비만도 검사
+                    </th>
+                </tr>
+                <tr>
+                    <td align="center">
+                        이름
+                    </td>
+                    <td>
+                        <input name="id" maxlength="10" autocomplete="off" placeholder="이름" class="textType">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        키
+                    </td>
+                    <td>
+                        <input name="height" maxlength="3" autocomplete="off" placeholder="키" class="textType">cm
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        몸무게
+                    </td>
+                    <td>
+                        <input name="weight" maxlength="3" autocomplete="off"  placeholder="몸무게" class="textType">kg
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        사진
+                    </td>
+                    <td>
+                        <input name="psa" type="file" class="fileType">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button>제출</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

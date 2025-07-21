@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            // HTML5 사용자의 현재 위치 받기 가능
+            //      서버에 안 올리고 로컬 실행 or https
+            //      사용자 동의도 받고
+            // 1) 사용자에게 GPS가 있으면 -> GPS로
+            // 2) GPS 없으면 IP주소로 -> 정확성이 떨어짐
+            navigator.geolocation.getCurrentPosition(function(asdv) {
+                alert(asdv.coords.latitude); // 위도
+                alert(asdv.coords.longitude); // 경도
+            });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

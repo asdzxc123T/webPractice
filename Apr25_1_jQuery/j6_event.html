@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            function addBtn() {
+                $("body").append($("<button></button>").attr("onclick", "addBtn()").text("ㅎㅎ"));
+            }
+            // jQuery를 써서 동적으로 추가된 DOM 객체들의 이벤트 처리?
+            // 콜백함수에 값 전달?
+            // $(function() {
+            //     // 모든 버튼들...
+            //     $("button").click(function() {
+            //         $("body").append($("<button></button>").text("ㅎㅎ"));
+            //     });
+            // }); // body에 있는 거 화면에 다 나오고 나서
+        </script>
+    </head>
+    <body>
+        <button onclick="addBtn()">ㅋㅋ</button>
+    </body>
+</html>

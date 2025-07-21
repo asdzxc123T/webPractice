@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            // 문법
+            //      jQuery(선택자).이벤트(콜백함수);
+            //      jQuery는 $로 줄여쓰기 가능, 다른 라이브러리에서도 $ 쓴다면
+            
+            // 선택자
+            //      기존 JS의 내장객체
+            //      "CSS선택자"
+
+            // 이벤트
+            //      기존 JS의 onXXX에서 on만 떼고 쓰면 됨
+
+            // $(document).ready(function () {
+            //     alert("ㅋ");
+            // }); // body의 load이벤트랑 같음 -> main역할
+            $(function () {
+                var si = $("#secondInput");
+
+                $("button").click(function() {
+                    alert(si.val());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <!--
+            ljwValidChecker.js : 유효성 검사 라이브러리
+            jQuery : JS전반적 라이브러리
+            react : JS전반적 + OOP 라이브러리 
+        -->
+        <input>
+        <input id="secondInput">
+        <button>ㅋ</button>
+        <button>ㅋ</button>
+        <button>ㅋ</button>
+        <button>ㅋ</button>
+        <button>ㅋ</button>
+        <button>ㅋ</button>
+        <button>ㅋ</button>
+    </body>
+</html>

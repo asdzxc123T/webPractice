@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            navigator.geolocation.getCurrentPosition(function(asdv) {
+                var lat = asdv.coords.latitude; // 위도
+                var lng = asdv.coords.longitude; // 경도
+
+                // JSON일 때만 사용 가능한 약식 버전 AJAX - 요청 헤더 처리 불가
+                // $.getJSON("주소", 받으면 콜백 함수);
+                var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lng + "&appid=baff8f3c6cbc28a4024e336599de28c4&units=metric&lang=kr";
+                $.getJSON(url, function(asd) {
+                    // alert(asd);
+                    // alert(JSON.stringify(asd));
+                    var icon = asd.weather[0].icon;
+
+                    var td1 = $("<td rowspan=\"2\"></td>").html("<img width=\"50px\" height=\"50px\" src=\"https://openweathermap.org/img/wn/" + icon + "@2x.png\">");
+                    var td2 = $("<td></td>").text(asd.weather[0].description);
+                    var tr1 = $("<tr></tr>").append(td1, td2);
+                    var td3 = $("<td></td>").text(asd.main.temp + "ºC(" + asd.main.humidity + "%)");
+                    var tr2 = $("<tr></tr>").append(td3);
+                    $("table").append(tr1, tr2);
+                });
+
+                // 정식 버전 AJAX - beforeSend 써서 요청 헤더 처리 가능
+                // $.ajax({
+                //     url : "https://api.openweathermap.org/data/2.5/weather",
+                //     data : {lat : lat, lon : lng, appid : "baff8f3c6cbc28a4024e336599de28c4", units : "metric", lang : "kr"},
+                //     success : function(asd) {
+                //         alert(asd);
+                //     }
+                // });\
+
+                $(document).mousemove(function(e) {
+                    $("table").css("top", e.pageY + 10 + "px").css("left", e.pageX + 10 + "px");
+                });
+            });
+        </script>
+        <style>
+            table {
+                position: absolute;
+                top: -100px;
+                left: -100px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            
+        </table>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+        <h1>zzzzzzzzzzzzzzzzzzzzz</h1>
+    </body>
+</html>

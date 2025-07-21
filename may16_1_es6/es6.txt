@@ -1,0 +1,15 @@
+cmd
+npm install yarn -g
+
+VScode 확장
+    ESLint : ES6 자동완성
+    ES7+ React/Re... : React 자동완성
+    Prettier - code formatter
+
+프로젝트 만들기
+1) 프로젝트 만들 곳에 가서 cmd
+2) yarn create react-app 프로젝트명
+3) cd 프로젝트명
+
+실행
+yarn start

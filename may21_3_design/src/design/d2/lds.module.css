@@ -1,0 +1,7 @@
+.hehehe {
+    color: red;
+}
+:global .ok {
+    /* 전체적용 */
+    background-color: green;
+}

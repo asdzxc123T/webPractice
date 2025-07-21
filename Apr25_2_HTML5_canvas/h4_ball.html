@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                var paper1 = document.getElementById("c1");
+                var pen1 = paper1.getContext("2d");
+                var paper2 = document.getElementById("c2");
+                var pen2 = paper2.getContext("2d");
+
+                var p1X = 150;
+                $("#c1").mousemove(function(e) {
+                    // $("#c1").offset().top
+                    // $("#c1").offset().left // 8
+                    p1X = e.pageX - 58; // 100 / 2 + 8
+                });
+
+                var ball = new Image();
+                ball.src = "ball.png";
+                var t;
+                var x = 185;
+                var y = 285;
+                var vx = 2;
+                var vy = 2;
+                ball.onload = function() {
+                    t = setInterval(function() {
+                        pen1.save()
+                        pen2.save()
+                        pen1.fillStyle = "#00000011"
+                        pen2.fillStyle = "#00000011"
+                        pen1.fillRect(0, 0, 400, 600);
+                        pen2.fillRect(0, 0, 400, 600);
+                        pen1.fillStyle = "red";
+                        pen2.fillStyle = "red";
+                        pen1.fillRect(p1X, 590, 100, 10);
+                        pen2.fillRect(300 - p1X, 0, 100, 10);
+                        
+
+                        if (y >= 570) {
+                            alert("Game Over");
+                            clearInterval(t);
+                        }
+                        if (x >= 370 || x <= 0)
+                            vx = -vx;
+                        if (y >= 560 && p1X <= x + 15 && p1X >= x - 85) {
+                            vy = -vy;
+                            y = 560;
+                        }
+                        else if (y <= 0)
+                            vy = -vy;
+
+                        x += vx;
+                        y += vy;
+                        pen1.drawImage(ball, x, y, 30, 30);
+                        pen2.drawImage(ball, 370 - x, 570 - y, 30, 30);
+                        pen1.restore();
+                    }, 0);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <canvas id="c1" width="400px" height="600px"></canvas>
+        <canvas id="c2" width="400px" height="600px"></canvas>
+    </body>
+</html>

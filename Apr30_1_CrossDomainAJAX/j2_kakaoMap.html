@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <style>
+            #list table {
+                width: 300px;
+                margin: 10px;
+                border: black solid 2px;
+            }
+            #list table:hover {
+                cursor: pointer;
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <td>
+                    <div id="map" style="width:500px;height:400px;"></div>
+                </td>
+                <td>
+                    <div id="roadview" style="width:500px;height:400px;"></div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <input id="place" placeholder="장소">
+                </td>
+                <td align="left">
+                    <input id="what" placeholder="뭐">
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=6e2377538e7c2d476494bdd32b7161a0"></script>
+        <script>
+            var lat;
+            var lng;
+            var mapArea;
+            var map;
+            var rvArea;
+            var roadview;
+            var rvManager;
+            var marker;
+
+            function moveMap(tempLat, tempLng) {
+                lat = tempLat;
+                lng = tempLng;
+                var moveLoc = new kakao.maps.LatLng(tempLat, tempLng);
+                map.setCenter(moveLoc);
+                marker.setPosition(moveLoc);
+                rvManager.getNearestPanoId(moveLoc, 50, function(panoId) {
+                    roadview.setPanoId(panoId, moveLoc);
+                });
+                $(window).scrollTop(0);
+            }
+
+            $(function(){
+                navigator.geolocation.getCurrentPosition(function(loc) {
+                    // lat = loc.coords.latitude;
+                    // lng = loc.coords.longitude;
+                    lat = 37.5693582;
+                    lng = 126.9858652;
+
+                    var position = new kakao.maps.LatLng(lat, lng);
+                    mapArea = document.getElementById('map');
+                    map = new kakao.maps.Map(mapArea, {
+                        center: position,
+                        level: 3
+                    });
+
+                    rvArea = document.getElementById('roadview');
+                    roadview = new kakao.maps.Roadview(rvArea);
+                    rvManager = new kakao.maps.RoadviewClient();
+                    rvManager.getNearestPanoId(position, 50, function(panoId) {
+                        roadview.setPanoId(panoId, position);
+                    });
+
+                    marker = new kakao.maps.Marker({
+                        position: position
+                    });
+                    marker.setMap(map);
+
+                    $("#place").keyup(function(e) {
+                        if (e.keyCode == 13) {
+                            var searchTxt = $("#place").val();
+                            $("#list").empty();
+                            $("#place").val("");
+                            $("#what").val("");
+                            $.ajax({
+                                url : "https://dapi.kakao.com/v2/local/search/address.json",
+                                data : {query : searchTxt},
+                                beforeSend : function(headers){
+                                    headers.setRequestHeader("Authorization", "KakaoAK e0bd46d9aea988808701f213a835bd46");
+                                },
+                                success : function(asd) {
+                                    moveMap(asd.documents[0].y, asd.documents[0].x);
+                                }
+                            });
+                        }
+                    })
+
+                    $("#what").keyup(function() {
+                        var searchTxt = $("#what").val();
+                        $.ajax({
+                            url : "https://dapi.kakao.com/v2/local/search/keyword.json",
+                            data : {y : String(lat), x : String(lng), radius : "500", query : searchTxt},
+                            beforeSend : function(headers){
+                                headers.setRequestHeader("Authorization", "KakaoAK e0bd46d9aea988808701f213a835bd46");
+                            },
+                            success : function(asd) {
+                                $("#list").empty();
+                                $.each(asd.documents, function(i, b) {
+                                    var addr = "addr" + i;
+                                    var tr1 = $("<tr></tr>").append($("<th></th>").text(b.place_name));
+                                    var tr2 = $("<tr></tr>").attr("align", "center").append($("<td></td>").attr("id", addr).text(b.address_name));
+                                    var tr3 = $("<tr></tr>").attr("align", "right").append($("<td></td>").text(b.distance + "m"));
+                                    var tr4 = $("<tr></tr>").attr("align", "right").append($("<td></td>").text(b.phone));
+                                    var table = $("<table></table>").attr("onclick", "moveMap("+b.y+","+b.x+")").attr("align", "center").append(tr1, tr2, tr3, tr4);
+                                    $("#list").append(table);
+                                });
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+        <div id="list" align="center">
+
+        </div>
+    </body>
+</html>

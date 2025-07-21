@@ -1,0 +1,5 @@
+.threadsTr:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    text-decoration: underline;
+}

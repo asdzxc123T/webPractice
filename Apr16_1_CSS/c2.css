@@ -1,0 +1,19 @@
+body {
+    background-color: powderblue;
+}
+div {
+    margin: 20px;
+    border: orange 7px solid;
+    /* color width type 
+        solid double
+        dotted dashed
+        inset outset
+        ridge groove
+    */
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 200px;
+    top: 300px;
+}

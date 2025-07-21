@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ㅋ</title>
+</head>
+<body>
+    <!--
+        table
+            게시판처럼 진짜 표 모양 필요할 때
+            실제) 웹디자이너가 드림위버 같은 걸로 좌표 조절
+            우리) 디자인을 안 할 수는 없고
+                VSCode로 코딩하면서 좌표조절?
+                table로 사이트 레이아웃...
+    -->
+    <table border="1" width="300" height="300">
+        <tr>
+            <td align="center">1</td>
+            <th>2</th>
+            <td align="right">3</td>
+        </tr>
+        <tr>
+            <td valign="top">4</td>
+            <td>5</td>
+            <td align="right" valign="bottom">6</td>
+        </tr>
+    </table>
+    <hr>
+    <table border="1" width="300" height="400">
+        <tr>
+            <td colspan="2">1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td rowspan="3">3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <hr>
+    <table border="1" width="300" height="300">
+        <tr>
+            <td colspan="2"></td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+</body>
+</html>

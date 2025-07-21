@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var a = 10;
+            if (a > 5) {
+                alert("5보다 큼");
+            }
+            else if (a > 3) {
+                alert("5보다는 작고 3보다는 큼");
+            }
+            else {
+                alert("해당 없음");
+            }
+
+            // switch(변수) {
+            //  case 값:
+            //      내용
+            //      break;
+            //  default:
+            //      내용
+            //}
+            var role = "DBA";
+            switch(role) {
+                case "DBA":
+                    alert("전원관리");
+                    alert("사용자관리");
+                    // break;
+                case "DBP":
+                    alert("CRUD");
+                    // break;
+                default:
+                    alert("서비스이용");
+            }
+
+            // if vs switch
+            //      if : 조건식 가능, 가독성 좋음
+            //      switch : 조건식 불가, 가독성 이상함, break의 전략적 사용 가능
+            //      -> if문이 모든면에서 우월해 보이는데,
+            //      권한 부여 같은 상황에서는 switch가 나음
+            //      -> Python은 효율적인 프로그래밍에 관심 없으니 
+            //      if문으로 끝내라는 마인드
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

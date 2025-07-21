@@ -1,0 +1,602 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background-light: #ffffff;
+  --foreground-light: #000000;
+  --background-dark: #121212;
+  --foreground-dark: #ffffff;
+
+  --sidebarClickedFont-light: rgb(29, 27, 22);
+  --sidebarNormalFont-light: rgb(95, 94, 91);
+  --sidebarTitleFont-light: rgb(145, 145, 142);
+  --sidebarBg-light: rgb(247, 247, 245);
+  --sidebarRowClicked-light: rgba(0, 0, 0, 0.03);
+  --writeBg-light: #e5e7eb;
+  --codeBg-light: #f5f5f5;
+
+  --sidebarClickedFont-dark: rgb(220, 220, 220);
+  --sidebarNormalFont-dark: rgb(180, 180, 180);
+  --sidebarTitleFont-dark: rgb(130, 130, 130);
+  --sidebarBg-dark: #1e1e1e;
+  --sidebarRowClicked-dark: rgba(255, 255, 255, 0.1);
+  --writeBg-dark: #2e2e2e;
+  --codeBg-dark: #3e3e3e;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  line-height: inherit;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.font-sans {
+  font-family: var(--font-family, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji);
+}
+
+.font-default {
+  font-family: Arial, sans-serif;
+}
+
+.font-serif {
+  font-family: Georgia, serif;
+}
+
+.font-monospace {
+  font-family: "Courier New", monospace;
+}
+
+[data-theme="light"] {
+  --background: var(--background-light);
+  --foreground: var(--foreground-light);
+  --sidebarClickedFont: var(--sidebarClickedFont-light);
+  --sidebarNormalFont: var(--sidebarNormalFont-light);
+  --sidebarTitleFont: var(--sidebarTitleFont-light);
+  --sidebarBg: var(--sidebarBg-light);
+  --sidebarRowClicked: var(--sidebarRowClicked-light);
+  --writeBg: var(--writeBg-light);
+  --codeBg: var(--codeBg-light);
+}
+
+[data-theme="dark"] {
+  --background: var(--background-dark);
+  --foreground: var(--foreground-dark);
+  --sidebarClickedFont: var(--sidebarClickedFont-dark);
+  --sidebarNormalFont: var(--sidebarNormalFont-dark);
+  --sidebarTitleFont: var(--sidebarTitleFont-dark);
+  --sidebarBg: var(--sidebarBg-dark);
+  --sidebarRowClicked: var(--sidebarRowClicked-dark);
+  --writeBg: var(--writeBg-dark);
+  --codeBg: var(--codeBg-dark);
+}
+
+.text-sidebarClickedFont {
+  --tw-text-opacity: 1;
+  color: var(--sidebarClickedFont)
+}
+
+.text-sidebarNormalFont {
+  --tw-text-opacity: 1;
+  color: var(--sidebarNormalFont)
+}
+
+.text-sidebarTitleFont {
+  --tw-text-opacity: 1;
+  color: var(--sidebarTitleFont)
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*,:after,:before {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit
+}
+
+.my-1 {
+  margin-top: .25rem;
+  margin-bottom: .25rem
+}
+
+.mr-2 {
+  margin-right: .5rem
+}
+
+.mt-8 {
+  margin-top: 2rem
+}
+
+.flex {
+  display: flex
+}
+
+.h-3\/4 {
+  height: 75%
+}
+
+.h-5\/6 {
+  height: 83.333333%
+}
+
+.h-8 {
+  height: 2rem
+}
+
+.h-full {
+  height: 100%
+}
+
+.min-h-screen {
+  min-height: 100vh
+}
+
+.w-60 {
+  width: 15rem
+}
+
+.w-7\/12 {
+  width: 58.333333%
+}
+
+.w-auto {
+  width: auto
+}
+
+.w-full {
+  width: 100%
+}
+
+.max-w-screen-lg {
+  max-width: 1024px
+}
+
+.flex-grow {
+  flex-grow: 1
+}
+
+.items-center {
+  align-items: center
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.justify-between {
+  justify-content: space-between
+}
+
+.gap-2 {
+  gap: .5rem
+}
+
+.rounded {
+  border-radius: .25rem
+}
+
+.rounded-md {
+  border-radius: .375rem
+}
+
+.border {
+  border-width: 1px
+}
+
+.bg-sidebarBg {
+  --tw-bg-opacity: 1;
+  background-color: var(--sidebarBg)
+}
+
+.bg-sidebarRowClicked {
+  background-color: var(--sidebarRowClicked)
+}
+
+.fill-current {
+  fill: currentColor
+}
+
+.object-contain {
+  object-fit: contain
+}
+
+.p-1 {
+  padding: .25rem
+}
+
+.px-1 {
+  padding-left: .25rem;
+  padding-right: .25rem
+}
+
+.px-3 {
+  padding-left: .75rem;
+  padding-right: .75rem
+}
+
+.py-1 {
+  padding-top: .25rem;
+  padding-bottom: .25rem
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
+.text-sm {
+  font-size: .875rem;
+  line-height: 1.25rem
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem
+}
+
+.text-xs {
+  font-size: .75rem;
+  line-height: 1rem
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.font-extrabold {
+  font-weight: 800
+}
+
+.font-medium {
+  font-weight: 500
+}
+
+.font-semibold {
+  font-weight: 600
+}
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.write {
+  width: 100%;
+  height: 20em;
+  resize: none;
+  background-color:var(--writeBg);
+}
+
+.head {
+  width: 100%;
+  height: 3.5rem;
+  font-weight: 700;
+  font-size: 2.25rem;
+  resize: none;
+  background-color:var(--writeBg);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-container input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: gray;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+table th, table td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+table th {
+  background-color: #a4a4a4;
+  font-weight: bold;
+}
+
+ul, ol {
+  margin: 20px 0;
+  padding-left: 40px;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal; 
+}
+
+h1 {
+  font-size: 2em;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 18px 0;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 14px 0;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.67em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.markdown-body {
+  line-height: 1.6;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  margin-top: 20px;
+}
+
+.markdown-body code {
+  background-color: var(--codeBg);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.unpinned {
+  visibility: hidden;
+}
+
+.cursor-pointer:hover .unpinned {
+  visibility: visible;
+}
+
+.settings-container {
+  position: relative;
+  top: 2em;
+  right: 2em;
+  display: inline-block;
+  align-items: end;
+}
+
+.settings-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--sidebarNormalFont);
+  transition: color 0.2s ease;
+  background-color: var(--sidebarRowClicked);
+  border: none;
+  border-radius: 4px;
+  padding: 0.3em;
+}
+
+.settings-button:hover {
+  background-color: var(--sidebarClickedFont);
+  color: var(--foreground-dark);
+}
+
+.settings-modal {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background-color: var(--sidebarBg);
+  border: 1px solid var(--sidebarRowClicked);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.settings-modal h1 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: var(--sidebarTitleFont);
+}
+
+.settings-row {
+  margin-bottom: 1rem;
+}
+
+.settings-row label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--sidebarNormalFont);
+}
+
+.settings-row select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--sidebarRowClicked);
+  border-radius: 4px;
+  background-color: var(--writeBg);
+  color: var(--sidebarTitleFont);
+}
+
+.save-button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--sidebarRowClicked);
+  border: none;
+  border-radius: 4px;
+  color: var(--sidebarNormalFont);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: var(--sidebarClickedFont);
+  color: var(--foreground-dark);
+}
+
+.comments-section {
+  position: absolute;
+  top: 2.75rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #5b3e44;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fdfdfd;
+  width: 300px;
+  height: 100vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--sidebarTitleFont);
+  background-color: var(--writeBg);
+}
+
+.comments-header {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.comment-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.comment-text {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+}
+
+.comment-input-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.comment-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  resize: none;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 100%;
+  font-size: 14px;
+  color: var(--sidebarTitleFont);
+  background-color: var(--sidebarRowClicked);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: var(--sidebarClickedFont);
+  color: var(--foreground-dark);
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            // for, for of, while
+            $(function() {
+                // DOM 객체 탐색용 -> XML 파싱
+                // $(선택자).each(콜백함수);
+                $("h1").each(function(iii, vvv) {
+                    $(vvv).css("font-size", (iii + 1) * 10);
+                });
+                ///////////////////////////////
+                var dogs = [
+                    {name:"후추", age:3},
+                    {name:"호초", age:2},
+                    {name:"흐츠", age:1}
+                ];
+                // JS 배열 탐색용 -> JSON 파싱
+                // $.each(배열, 콜백함수);
+                $.each(dogs, function(inin, dodo) {
+                    alert(dodo.name);
+                    alert(dodo.age)
+                });
+                ///////////////////////////////
+                // HTML
+                // XML : HTML DOM 객체 모양만 흉내낼 뿐
+                // JavaScript
+                // JSON : JS 배열+객체 모양만 흉내낼 뿐
+                var css = [
+                    {c : "red", bgc : "black"},
+                    {c : "green", bgc : "gray"},
+                    {c : "blue", bgc : "yellow"}
+                ];
+                $("h2").each(function(i, v) {
+                    $(v).css("color", css[i].c).css("background-color", css[i].bgc);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h2>ㄱㄱㄱ</h2>
+        <h2>ㄴㄴㄴ</h2>
+        <h2>ㄷㄷㄷ</h2>
+        <h1>ㅋㅋㅋ</h1>
+        <h1>ㅎㅎㅎ</h1>
+        <h1>ㅇㅇㅇ</h1>
+    </body>
+</html>

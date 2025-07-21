@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://localhost:5678/socket.io/socket.io.js"></script>
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                // 정통 소켓통신 - 별개의 통신
+                // 웹 통신 - HTTP기반
+
+                // 연결하기 -> 자동으로 서버로 메세지를 전송
+                //                  제목 : connection
+                //                  내용 : 본인과 연결되는 소켓 객체
+                var socket = io.connect("http://195.168.9.16:5678");
+
+                $("button").click(function() {
+                    var txt = $("input").val();
+                    socket.emit("abcd", txt);
+                    $("input").val("");
+                });
+
+                socket.on("efgh", function(cxvz) {
+                    $("body").append($("<h1></h1>").append(cxvz))
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <input>
+        <button>전송</button>
+    </body>
+</html>

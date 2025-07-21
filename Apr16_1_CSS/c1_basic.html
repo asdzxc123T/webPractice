@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ㅋ</title>
+        <style>
+            h1 {
+                color: #43a047;
+            }
+            #aaa {
+                background-color: skyblue;
+            }
+            .ccc {
+                font-family: "궁서";
+            }
+            h1, h2 {
+                text-decoration: underline; /* CSS 주석 */
+            }
+            div h3 {
+                            /* x y blur color */
+                text-shadow: 3px 5px 5px gray;
+            }
+            h2.ccc {
+                box-shadow: -3px -2px 7px red;
+            }
+            .eee.ccc {
+                cursor: pointer;
+            }
+            h4:hover {
+                color: green;
+            }
+            h4:active {
+                color: red;
+            }
+            input:focus {
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+    <body>
+        <input>
+        <input>
+        <h2 class="ccc">CSSselector : HTML DOM 객체 선택에 사용되는 건데, 다른 분야에서 많이 사용</h2>
+            기본형
+            <h3 class="ccc">태그명 : 그것들 다</h3>
+            <h3 class="ddd">#id : id가 그거인 거</h3>
+            <h3 class="ccc eee">.class : class가 그거인 것들</h3>
+
+        <div>
+            <h3>조합형</h3>
+                기본형, 기본형, ... : 여러개 한꺼번에 선택
+                기본형 기본형 ... : 포함관계 선택
+                기본형.class : 그거
+        </div>
+            <h4 style="background-color: brown;">상태형</h4>
+                기본형:상태
+        <h1>CSS(Cascading Style Sheet)</h1>
+            <h1>HTML DOM 객체에 디자인 입혀주는 디자인 언어</h1>
+            <h2 id="aaa">위치 : .html 내부, 따로 .css 파일, DOM 객체 속성</h2>
+            <h2 id="bbb">문법 : </h2>
+                CSSselector {
+                    속성명 : 값;
+                    속성명 : 값;
+                    ...
+                }
+    </body>
+</html>

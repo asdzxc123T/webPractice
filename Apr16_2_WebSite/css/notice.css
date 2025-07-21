@@ -1,0 +1,27 @@
+#noticeBBS {
+    width: 400px;
+
+    /* 제목줄에만 들어갈 */
+    background-color: dodgerblue;
+    color: white;
+
+    /* td간의 간격 */
+    border-spacing: 0px;
+}
+#noticeBBS .dataTr {
+    /* 내용줄 디자인 */
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+#noticeBBS .dataTr:hover {
+    background-color: gray;
+}
+#noticeBBS th {
+    height: 35px;
+}
+#noticeBBS td {
+    border-bottom: dodgerblue solid 1px;
+    height: 30px;
+}

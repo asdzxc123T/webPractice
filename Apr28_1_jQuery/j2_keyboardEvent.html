@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                $("input").keydown(function(e) {
+                    if (e.keyCode == 65)
+                        return false;
+                });
+                // 키보드 기능 발동
+                $("input").keyup(function(e) {
+                    // alert(e.keyCode); // 키보드 아스키값
+                    if (e.keyCode == 13)
+                        alert("엔터침");
+                });
+                $("html").keydown(function(e) {
+                    if (e.keyCode == 37) {
+                        $("img").css("left", $("img").offset().left - 3 + "px");
+                    }
+                    if (e.keyCode == 38) {
+                        $("img").css("top", $("img").offset().top - 3 + "px");
+                    }
+                    if (e.keyCode == 39) {
+                        $("img").css("left", $("img").offset().left + 3 + "px");
+                    }
+                    if (e.keyCode == 40) {
+                        $("img").css("top", $("img").offset().top + 3 + "px");
+                    }
+                })
+            });
+        </script>
+        <style>
+            img {
+                position: absolute;
+                top: 100px;
+                left: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <input>
+        <hr>
+        <img src="ball.png">
+    </body>
+</html>

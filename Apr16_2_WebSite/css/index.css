@@ -1,0 +1,72 @@
+@font-face {
+    /*
+        CSS3에서 추가된 웹폰트
+            사용자 컴에 설치가 안 되어있어도 폰트 사용 가능하게
+            1) CSS3 -> IE에서 안 될거고
+            2) 폰트파일은 용량이 큰데, 서버에서 사용자에게 제공
+                서버가 느리면?
+            -> 실무에서는 이미지로 작업해오지
+    */
+    font-family: "d2c";
+    src: url("D2CODING-VER1.3.2-20180524-ALL.TTC");
+}
+a {
+    text-decoration: none;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+#siteTitleArea {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: #ffffffcc;
+}
+#siteTitle {
+    width: 1200px;
+    height: 90px;
+    font-family: "d2c";
+    font-size: 30pt;
+    font-weight: 900;
+    color: darkblue;
+    text-shadow: 1px 1px 3px gray;
+    text-align: center;
+}
+#siteMenuArea {
+    background-color: lightblue;
+    border-top: royalblue solid 3px;
+    border-bottom: royalblue solid 3px;
+}
+#siteMenu {
+    width: 1200px;
+    height: 45px;
+}
+#siteMenu a:hover{
+    color: blue;
+}
+#siteMenu a{
+    transition: all 0.3s ease-in; /* 속성명 시간 속도조절 
+                                            ease-in : 점점 빨라짐
+                                            ease-out : 점점 느려짐
+                                            linear : 등속
+                                    CSS3에 추가됨
+    */
+    margin: 20px;
+    font-weight: 900;
+    color: royalblue;
+}
+#siteContentArea {
+    /* 단독 테이블 가운데 정렬 */
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    padding: 10px;
+    padding-top: 160px;
+    background-color: cornflowerblue;
+}
+::-webkit-scrollbar {
+    /* (크롬, 엣지에서만) */
+    display: none;
+}

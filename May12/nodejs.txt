@@ -1,0 +1,57 @@
+컴은 기본적으로 한번에 한 작업만 가능 : singlethread
+한번에 동시에 여러작업 : multithread
+    1) Python이 멀티스레드에 약함
+    2) 멀티스레드를 하면 컴퓨터 부담 증가
+
+single thread blocking I/O -> 10분
+    FastAPI 기본
+multi thread blocking I/O -> 5분
+    JSP/Spring/SpringBoot
+single thread non-blocking I/O -> 5분
+    FastAPI에서 async + await 넣어주면
+    Node.js
+
+Python : back-end의 언어(server-side) -> FastAPI...
+JavaScript : front-end의 언어(client-side) -> jQuery...
+
+FastAPI(Python) : Python으로 하는 Back-end 프로그래밍
+                    일반적으로 single-thread blocking I/O 방식
+                    일반적인 상황
+                    uvicorn WAS에 실어서
+                    Python 라이브러리
+                    HTTP 통신
+Node.js(JavaScript) : JavaScript로 하는 Back-end 프로그래밍
+                    single-thread non-blocking I/O 방식
+                    실시간 통신
+                    react/vue/... 선수 기술
+                    단독실행
+                    JS 독립 프레임워크
+                    npm을 활용해서 다양한 add-on
+                    Socket 통신
+
+                    npm install 이름 -g : Node.js 본체에 붙이는 툴
+                    npm install 이름    : 프로젝트에 넣는 라이브러리
+
+설치
+1) Node.js 본체 설치
+2) nodemon : 소스작업하고 저장하면 자동 재시작
+    npm install nodemon -g
+3) express : 웹 백엔드 프로젝트 자동 생성
+    npm install express -g
+    npm install express-generator@4 -g
+---------------------------------------------------
+프로젝트 생성
+1) 프로젝트 만들 곳에 가서 cmd
+2) 프로젝트 생성
+    express 프로젝트명
+        express May12_1_Test
+3) 프로젝트 폴더로 들어가서
+    cd 프로젝트명
+        cd May12_1_Test
+4) 기본적으로 필요한 라이브러리 설치
+    npm install
+5) app.js 편집
+---------------------------------------------------
+실행(nodemon)
+    nodemon 파일명
+    nodemon app.js

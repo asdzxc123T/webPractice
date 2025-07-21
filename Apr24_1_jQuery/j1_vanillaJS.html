@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var si;
+            function mainn() {
+                si = document.getElementById("secondInput");
+            }
+            // 버튼 중에 아무거나 하나 누르면 
+            // 두번째 input에 쓴 내용 alert으로 출력
+            function showAlert() {
+                alert(si.value);
+            }
+            // 작업 형태가 함수 정의 -> DOM객체의 onXXX에 연결
+            // 1) DOM객체 찾아가야 하는 불편함
+            // 2) 같은 이벤트 여러군데 연결 : 일일이 노가다 
+
+            // 문법 + 인터프리터 방식
+            // 3) 문법이 긴데, 에러잡기는 힘들고
+            // 4) main이 따로 없어서
+            //      body의 load이벤트(body에 있는 거 화면에 다 나오고 나서)를 써야
+
+            // Python 개발자 입장에서
+            // 5) 변수 사용범위가 있다?
+
+            // => vanilla JavaScript가 개발자들에게 외면을 받아왔었다
+            //      -> 저런 단점을 해결한 JS라이브러리들이 나오면서
+        </script>
+    </head>
+    <body onload="mainn()">
+        <input>
+        <input id="secondInput">
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+        <button onclick="showAlert()">ㅋ</button>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                var paper = document.getElementById("c");
+                var pen = paper.getContext("2d");
+
+                beginX = -1;
+                beginY = -1;
+                endX = -1;
+                endY = -1;
+                $("#c").mousemove(function(e) {
+                    if (drawing) {
+                        endX = e.pageX - 8;
+                        endY = e.pageY - 8;
+                        pen.beginPath();
+                        pen.moveTo(beginX, beginY);
+                        pen.lineTo(endX, endY);
+                        pen.closePath();
+                        pen.stroke();
+                        beginX = endX;
+                        beginY = endY;
+                    }
+                });
+
+                var t;
+                var drawing = false;
+                $("#c").mousedown(function(e) {
+                    if (e.button == 0) {
+                        drawing = true;
+                        beginX = e.pageX - 8;
+                        beginY = e.pageY - 8;
+                    }
+                })
+                $("html").mouseup(function() {
+                    drawing = false;
+                })
+            });
+        </script>
+        <style>
+            canvas {
+                border: black solid 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="c" width="800px" height="600px"></canvas>
+    </body>
+</html>

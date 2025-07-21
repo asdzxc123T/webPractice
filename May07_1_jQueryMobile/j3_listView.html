@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="p1">
+            <div data-role="header" data-position="fixed">
+                <h1>page1</h1>
+            </div>
+            <div data-role="content">
+                <input>
+                <ul data-role="listview" data-inset="true" data-filter="true">
+                    <li data-role="list-divider">자음</li>
+                    <li>ㄱㄱㄱ</li>
+                    <li>ㄴㄴㄴ</li>
+                    <li>ㄷㄷㄷ</li>
+                    <li data-role="list-divider">모음</li>
+                    <li>ㅏㅏㅏ</li>
+                    <li>ㅓㅓㅓ</li>
+                    <li>ㅡㅡㅡ</li>
+                    <li data-role="list-divider">메뉴</li>
+                    <li><a href="#p2">제육덮밥</a></li>
+                    <li>야채김밥</li>
+                    <li>된장찌개</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="page" id="p2">
+            <div data-role="header" data-position="fixed">
+                <h1>제육덮밥</h1>
+            </div>
+            <div data-role="content">
+                제육덮밥
+            </div>
+        </div>
+    </body>
+</html>

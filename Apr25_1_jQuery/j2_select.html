@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                // this : 이벤트가 발생한 객체(콜백함수를 호출한 범인)
+                // .parent() : 한단계 상위
+                // .closest("CSS선택자") : 상위로 올라가다가 가장 가까운 CSS선택자
+                // .children() : 한단계 하위들
+                // .find("CSS선택자") : 하위로 내려가다가 가장 가까운 CSS선택자
+
+                // 버튼 누르면 눌러진 버튼 배경색 빨강으로
+                // 버튼 누르면 눌러진 버튼이 소속된 td 배경색 초록으로
+                // 버튼 누르면 눌러진 버튼이 소속된 table 가로사이즈 500으로
+                $("button").click(function() {
+                    $(this).css("background-color", "red");
+                    $(this).parent().css("background-color", "green");
+                    $(this).closest("table").css("width", "500px");
+                    alert($(this).parent().find("input").val());
+                });
+
+                // td 누르면 눌러진 td에 소속된 것들 글자색을 파랑
+                // td 누르면 눌러진 td에 소속된 input 글자색을 파랑
+                $("td").click(function() {
+                    $(this).children().css("color", "blue");
+                    $(this).find("input").css("background-color", "yellow");
+                });
+            });
+        </script>
+        <style>
+            td {
+                padding: 20px;
+            }
+            button {
+                margin-left: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>
+                    <input>
+                    <button>ㄱㄱ</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input>
+                    <button>ㄱㄱ</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input>
+                    <button>ㄱㄱ</button>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <table border="1">
+            <tr>
+                <td>
+                    <input>
+                    <button>ㄱㄱ</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input>
+                    <button>ㄱㄱ</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input>
+                    <button>ㄱㄱ</button>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

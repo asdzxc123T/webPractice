@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                $("#b1").click(function() {
+                    $("a").attr("href", "https://google.com");
+                });
+                $("#b2").click(function() {
+                    alert($("a").attr("href"));
+                });
+                $("#b3").click(function() {
+                    // $("a").attr("href", "");
+                    $("a").removeAttr("href");
+                });
+                $("img").click(function() {
+                    var i = 1;
+                    setInterval(function() {
+                        $("img").attr("src", "hero_walk_0" + i + ".png");
+                        i++;
+                        if (i == 6)
+                            i = 1;
+                    }, 50)
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <a href="https://www.naver.com">네이버로</a>
+        <hr>
+        <button id="b1">수정</button>
+        <button id="b2">확인</button>
+        <button id="b3">삭제</button>
+        <hr>
+        <img src="hero_walk_01.png">
+    </body>
+</html>

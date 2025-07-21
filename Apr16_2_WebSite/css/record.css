@@ -1,0 +1,51 @@
+.aRecord {
+    width: 90%;
+    border: darkblue solid 4px;
+    box-shadow: 0px 0px 20px navy inset;
+    border-radius: 10px; /* 모서리 깎기 */
+    background-color: whitesmoke;
+    margin: 15px;
+}
+.aRecord .idTd {
+    padding: 7px;
+    padding-left: 15px;
+    color: darkblue;
+    font-weight: 900;
+}
+.aRecord .imgTd {
+    width: 150px;
+}
+.aRecord .imgTd img {
+    max-width: 130px;
+    /* 
+        이미지 크기 조절
+            - 안 해야(애초에 그 크기의 이미지가 있어야)
+            - 어쩔 수 없이 해야 하는 상황
+                100 -> 200 : 계단 현상
+                300 -> 200 : 덜 깨짐
+            
+            max-width/max-height :
+                그것보다 큰 거는 그 사이즈로
+                그것보다 작은 거는 원본 사이즈
+                -> 작은 거를 키우지를 않음
+    */
+}
+.aRecord .dateTd {
+    font-size: 9pt;
+    padding-right: 10px;
+}
+.aRecord .txtTd {
+    padding: 20px;
+}
+.aRecord .btnTd {
+    padding: 10px;
+}
+.aRecord .btnTd button {
+    border: none;
+    background-color: transparent;
+    color: darkblue;
+    font-weight: 900;
+}
+.aRecord .btnTd button:hover {
+    color: red;
+}

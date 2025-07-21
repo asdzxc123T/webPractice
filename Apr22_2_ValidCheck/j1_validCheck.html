@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            // return true; - 기존 기능 살려라
+            // return false; - 기존 기능 없애라
+            function checkkkk() {
+                // document.form이름.input이름
+                var idInput = document.ff.id;
+                var pwInput = document.ff.pw;
+                var ageInput = document.ff.age;
+                
+                // 필수 검사
+                if(!idInput.value) {
+                    alert("ID는 필수");
+                    idInput.focus(); // 커서 갖다주기
+                    return false;
+                }
+
+                // 글자수 검사
+                if(idInput.value.length < 4) {
+                    alert("ID 4자 이상");
+                    idInput.focus();
+                    idInput.value = "";
+                    return false;
+                }
+
+                // 중복 id 검사 : JS + DB 할 줄 몰라
+                // id에 한글, 특수문자 못 쓰게
+                // pw에 소문자, 특수문자 있어야야
+                //      정규표현식 - 찾아보
+
+                if(!pwInput.value) {
+                    alert("PW는 필수");
+                    pwInput.focus();
+                    return false;
+                }
+
+                if(pwInput.value.length < 4) {
+                    alert("PW 4자 이상");
+                    pwInput.focus();
+                    pwInput.value = "";
+                    return false;
+                }
+
+                // pw에 abcd 중에 하나 무조건
+                // pw에 1234 중에 하나 무조건
+                var set1 = "abcd";
+                var set1OK = false; // 그 문자열세트가 있나 없나
+                for(var i = 0; i < set1.length; i++) {
+                    if (pwInput.value.indexOf(set1[i]) != -1) {
+                        set1OK = true;
+                        break;
+                    }
+                } 
+                var set2 = "1234";
+                var set2OK = false;
+                for(var i = 0; i < set2.length; i++) {
+                    if (pwInput.value.indexOf(set2[i]) != -1) {
+                        set2OK = true;
+                        break;
+                    }
+                }
+                if (!set1OK || !set2OK) {
+                    alert("abcd/1234 필수")
+                    return false;
+                }
+
+                if(!ageInput.value) {
+                    alert("age는 필수");
+                    ageInput.focus();
+                    return false;
+                }
+                // 숫자
+                if (isNaN(ageInput.value)) {
+                    alert("age는 숫자만")
+                    ageInput.focus();
+                    ageInput.value = "";
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <!-- 
+            입력 유효성 검사
+                Python 쪽까지 가서 if, try, ...로 해도 되겠지만
+                    1) 가야 함 : 통신을 한다
+                    2) Python은 유효성 검사 말고도 할 일이 많음
+                사용자쪽에서 JavaScript로 검사해서 잘못됐으면 가지도 않게 하자
+        -->
+        <form name="ff" action="http://localhost:8888/member.sign.up" onsubmit="return checkkkk();">
+            id : <input name="id" maxlength="10"><p>
+            pw : <input name="pw" type="password" maxlength="10"><p>
+            나이 : <input name="age" maxlength="3"><p>
+            <button>ㄱㄱ</button>
+        </form>
+    </body>
+</html>

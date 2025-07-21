@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://localhost:5678/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <script>
+            $(function() {
+                var socket = io.connect("http://195.168.9.61:56567");
+                // $("#enterButton").click(function() {
+                //     var who = $("#nickname").val();
+                //     socket.emit("enterClntMsg", who);
+                // });
+                $("#chatMsg").keyup(function(e) {
+                    if (e.keyCode == 13) {
+                        var who = $("#nickname").val();
+                        var msg = $("#chatMsg").val();
+                        socket.emit("clntMsg", {"who" : who, "txt" : msg});
+                        $("#chatMsg").val("");
+                    }
+                });
+                // socket.on("enterSrvMsg", function(res) {
+                //     $("#chatContentArea").append($("<table></table>").attr("width", "100%").append($("<tr></tr>").attr("align", "center").append($("<td></td>").append("'" + res + "'님이 입장하셨습니다."))));
+                //     $(window).scrollTop($(document).height());
+                // });
+                socket.on("srvMsg", function(res) {
+                    var who = $("#nickname").val();
+                    if (who == res.who)
+                        $("#chatContentArea").append($("<table></table>").attr("width", "100%").append($("<tr></tr>").attr("align", "right").append($("<td></td>").append(res.who)), $("<tr></tr>").attr("align", "right").append($("<td></td>").append($("<span></span>").attr("class", "myChat").append(res.txt)))));
+                    else
+                        $("#chatContentArea").append($("<table></table>").attr("width", "100%").append($("<tr></tr>").attr("align", "left").append($("<td></td>").append(res.who)), $("<tr></tr>").attr("align", "left").append($("<td></td>").append($("<span></span>").attr("class", "otherChat").append(res.txt)))));
+                    $(window).scrollTop($(document).height());
+                });
+            });
+        </script>
+        <style>
+            .myChat {
+                background-color: yellow;
+                padding: 3px;
+                border: 0.25px solid black;
+            }
+            .otherChat {
+                background-color: #C0C0C0;
+                padding: 3px;
+                border: 0.25px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div data-role="page" id="coverPage">
+            <div data-role="header" data-position="fixed">
+                <h1>Cover Page</h1>
+            </div>
+            <div data-role="content" id="coverPageContentArea">
+                <input id="nickname" placeholder="대화명">
+                <a href="#chatPage">
+                    <button id="enterButton">입장</button>
+                </a>
+            </div>
+        </div>
+
+        <div data-role="page" id="chatPage">
+            <div data-role="header" data-position="fixed">
+                <a href="#coverPage" data-icon="arrow-l">나가기</a>
+                <h1>Chat Page</h1>
+            </div>
+            <div data-role="content" id="chatContentArea">
+                
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <input id="chatMsg" placeholder="채팅 입력">
+            </div>
+        </div>
+    </body>
+</html>

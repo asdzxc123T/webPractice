@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="h1.css">
+    </head>
+    <body>
+        <form action="http://localhost:5678/member.sign.up" method="post">
+            <table>
+                <tr>
+                    <th colspan="2">회원가입</th>
+                </tr>
+                <tr>
+                    <td class="td1">
+                        ID
+                    </td>
+                    <td align="center">
+                        <input name="id" placeholder="ID" class="texttype">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td1">
+                        Password
+                    </td>
+                    <td align="center">
+                        <input name="pw" type="password" placeholder="Password" class="texttype">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td1">
+                        성별
+                    </td>
+                    <td align="center">
+                        <!-- 반드시 하나만 선택 -->
+                        <input name="gender" type="radio" value="남" checked>남자<br>
+                        <input name="gender" type="radio" value="여">여자<br>
+                        <input name="gender" type="radio" value="기">기타
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td1">
+                        주소
+                    </td>
+                    <td align="center">
+                        <select name="addr" class="selectType">
+                            <option>서울</option>
+                            <option value="경기권">수도권</option>
+                            <option>기타 국내</option>
+                            <option>해외</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td1">
+                        취미
+                    </td>
+                    <td align="center">
+                        <!-- 여러개 선택 -->
+                        <input name="hobby" type="checkbox" value="운동">운동<br>
+                        <input name="hobby" type="checkbox" value="독서">독서<br>
+                        <input name="hobby" type="checkbox" value="잠">잠
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td1">
+                        자기소개
+                    </td>
+                    <td>
+                        <textarea name="comment" class="taType"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <!--
+                            form 속의 input type="submit"을 누르면 요청이었는데
+                            대충 버튼 누르면 요청가게 바뀜
+                        -->
+                        <!-- input type="submit" value="가입"><br -->
+                        <button>가입</button><br>
+                        <input type="image" src="android_normal.png"><br>
+                        <input type="reset" value="다시"><br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!-- 
+            위에서 본 거 빼고 나머지들은 html5에서 추가된 거
+            1) 쓰기가...
+            2) checkbox 빼고 나머지는 사용방법이 똑같음
+        -->
+    </body>
+</html>

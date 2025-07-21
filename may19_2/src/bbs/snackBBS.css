@@ -1,0 +1,29 @@
+div {
+    margin: 10px;
+}
+#snackBBSTbl {
+    width: 300px;
+    background-color: darkorange;
+    color: whitesmoke;
+}
+#snackBBSTbl th {
+    height: 30px;
+}
+#snackArea .txtTypeInput {
+    border: darkorange solid 2px;
+}
+#snackArea button {
+    margin: 3px;
+    background-color: darkorange;
+    padding: 5px;
+    width: 300px;
+}
+#snackArea button:hover {
+    cursor: pointer;
+    background-color: rgb(141, 77, 0);
+}
+#snackBBSTbl .dataTr:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+}

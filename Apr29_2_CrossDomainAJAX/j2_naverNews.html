@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                $("input").keyup(function(e) {
+                    // if(e.keyCode == 13) {
+                        // $(선택).trigger("이벤트명") : 이벤트 강제 발생
+                        $("button").trigger("click");
+                    // }
+                });
+
+                // Jxg2IcNrXA_1Bg2yfRiK
+                // TuOhPcVrRM
+                $("button").click(function() {
+                    var searchTxt = $("input").val();
+                    $.ajax({
+                        // url: "주소(요청파라메터부분 빼고)",
+                        // data : {"변수명":값, "변수명":값, ...},
+                        // beforeSend : function(요청객체){
+                        //      요청객체.setRequestHeader("이름", "값");
+                        // },
+                        // success : function(받아온 거) {
+                        // }
+                        url : "http://localhost:8888/naver.news.get",
+                        data : { q : searchTxt },
+                        success : function(xmll) {
+                            $("table").empty();
+                            $(xmll).find("item").each(function(i, item) {
+                                var title = $(item).find("title").text();
+                                var desc = $(item).find("description").text();
+                                var td1 = $("<td></td>").html(title);
+                                var td2 = $("<td></td>").html(desc);
+                                var tr = $("<tr></tr>").append(td1, td2);
+                                $("table").append(tr);
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input><button>검색</button>
+        <hr>
+        <table border="1">
+            <tr>
+                <th>제목</th>
+                <th>내용</th>
+            </tr>
+        </table>
+    </body>
+</html>

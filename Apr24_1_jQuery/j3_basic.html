@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            // event-driven programming
+            // 이벤트에 콜백함수 연결하고
+            $(function () {
+                // h1들 더블클릭하면 여기 호출
+                // h1들에 더블클릭 이벤트가 발생하면 abcd함수 호출하도록 연결해두기
+                $("h1").dblclick(function abcd() {
+                    for (var i = 0; i < 3; i++)
+                        alert("z");
+                });
+
+                // h2들에 클릭 이벤트가 발생하면 함수 호출하도록 연결해두기
+                $("h2").click(function () {
+                    alert("g");
+                });
+
+                var a1 = $("input");
+                $("h3").click(function() {
+                    // JS는 오버로딩이 가능
+                    // jQuery 문법 특징
+                    //      ~~~.val() : 값 가져오기
+                    //      ~~~.val(내용) : 값 바꾸기
+                    alert(a1.val());
+                    a1.val("zzz");
+                })
+            }); // body에 있는 거 화면에 다 나오고 나서
+        </script>
+    </head>
+    <body>
+        <h1>zzz</h1>
+        <h2>ggg</h2>
+        <h3>rrr</h3>
+        <input>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                // 원래 아무 일도 없던 이벤트
+                // 원래 기능이 있던 이벤트
+                //      return true - 원래 있던 기능 발동
+                //      return false - 원래 있던 기능 제거
+
+                // 우클릭해서 브라우저의 팝업메뉴가 나오려고 할 때
+                $(document).contextmenu(function() {
+                    return false;
+                });
+                $(document).mouseup(function(e) {
+                    if (e.button == 2) {
+                        $("table").css("top", e.pageY + "px").css("left", e.pageX + "px").css("opacity", "1");
+                        
+                        setTimeout(function() {
+                            $("table").css("opacity", "0");
+                            setTimeout(function() {
+                                $("table").css("top", "-100px").css("left", "-100px");
+                            }, 300);
+                        }, 5000);
+                    }
+                });
+            });
+        </script>
+        <style>
+            table {
+                position: fixed;
+                top: -90px;
+                transition: opacity 0.3s ease-in;
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td><a href="https://www.naver.com">네이버로</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.google.com">구글로</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.daum.net">다음으로</a></td>
+            </tr>
+        </table>
+    </body>
+</html>

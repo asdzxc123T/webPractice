@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                $("select").change(function() {
+                    alert($(this).val());
+                });
+
+                // document : 이 html
+                // window : 브라우저(front-end)
+                // navigator : 브라우저(back-end)
+                // alert(navigator.userAgent); // 접속한 브라우저 정보를 문자열로
+                if(navigator.userAgent.indexOf("Android") != -1 || navigator.userAgent.indexOf("iPhone") != -1) {
+                    location.href = "https://www.naver.com";
+                }
+
+                $(window).resize(function() {
+                    var w = $(window).width();
+                    var h = $(window).height();
+                    $("h1").text(w + ", " + h);
+                });
+
+                $(window).scroll(function() {
+                    var htmlHeight = $(document).height(); // 문서 전체 길이
+                    var browserHeight = $(window).height(); // 현재 창의 길이
+                    var scrollOffset = $(window).scrollTop(); // 현재 창의 위쪽 좌표
+                    var scrollOffsetBottom = scrollOffset + browserHeight; // 현재 창의 아래쪽 좌표
+
+                    if (scrollOffsetBottom >= htmlHeight - 10) {
+                        var h3 = $("<h3></h3>").text("추가");
+                        $("body").append(h3);
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <select>
+            <option>ㅋㅋㅋㅋ</option>
+            <option>ㅎㅎㅎㅎ</option>
+            <option>ㅇㅇㅇ</option>
+        </select>
+        <h1></h1>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+        <h2>ㅋㅋ</h2>
+    </body>
+</html>

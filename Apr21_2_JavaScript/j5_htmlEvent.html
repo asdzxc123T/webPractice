@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            // vanilla : 순정버전
+
+            // 1) 함수 정의
+            // 2) HTML DOM 객체의 onXXX속성에 연결
+            // -> 작업 형태상 작업이 불편
+            // 문법이 길다 + 인터프리터 방식
+            // -> 에러 잡기가 최악
+            // => 역사적으로 개발자들에게 외면당해왔음
+            // vanilla JS는 여전히 불편
+            // jQeury라는 JS라이브러리가 나오면서 본격적으로 쓰기 시작
+            // 본격적으로 발전된 JS 라이브러리 : react/vue
+
+            // callback 함수
+            //      직접 호출x, click 이벤트에 연결시켜놔서
+            //      이벤트가 발생하면 자동으로 호출됨
+            function printHaha() {
+                alert("ㅎㅎㅎ");
+            }
+            function printGogo() {
+                alert("ㄱㄱㄱ");
+            }
+        </script>
+    </head>
+    <body>
+        <h1 onclick="printHaha();">ㅋㅋ</h1>
+        <h2 ondblclick="printGogo();">ㅠㅠ</h2>
+        <input onkeyup="printGogo();">
+    </body>
+</html>

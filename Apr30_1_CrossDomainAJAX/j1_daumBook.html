@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+        <script src="jQuery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+
+        
+        <script>
+            $(function() {
+                var s = $(".slider").bxSlider({
+                    mode: 'fade',
+                    captions: true,
+                    slideWidth: 600
+                });
+                $("button").click(function() {
+                    var searchTxt = $("input").val();
+                    $.ajax({
+                        url : "https://dapi.kakao.com/v3/search/book",
+                        data : {query : searchTxt},
+                        beforeSend : function(headers){
+                            headers.setRequestHeader("Authorization", "KakaoAK e0bd46d9aea988808701f213a835bd46");
+                        },
+                        success : function(asd) {
+                            $(".board").empty();
+                            $(".slider").empty();
+                            $.each(asd.documents, function(i, b) {
+                                var td1 = $("<td></td>").attr("rowspan", "3").html("<img src=\""+b.thumbnail+"\">");
+                                var td2 = $("<td></td>").text(b.title);
+                                var tr1 = $("<tr></tr>").append(td1, td2);
+                                var authors = b.authors[0];
+                                for (var j = 1; j < b.authors.length; j++) {
+                                    authors = authors + ", " + b.authors[j];
+                                }
+                                var tr2 = $("<tr></tr>").append($("<td></td>").text(authors));
+                                var tr3 = $("<tr></tr>").append($("<td></td>").text(b.contents));
+                                var table1 = $("<table></table>").attr("border", "1").append(tr1, tr2, tr3);
+                                var slider1 = $("<div></div>").append($("<img>").attr("src", b.thumbnail).attr("title", b.title));
+                                $(".board").append(table1);
+                                $(".slider").append(slider1);
+                            });
+                            s.reloadSlider();
+                        }
+                    });
+                });
+                $("input").keyup(function(e) {
+                    if(e.keyCode == 13) {
+                        $("button").trigger("click");
+                    }
+                });
+            });
+        </script>
+        <style>
+            table {
+                margin: 5px;
+            }
+            .slider {
+                width: 200px;
+                height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <input>
+        <button>검색</button>
+        <div class="slider">
+
+        </div>
+        <div class="board">
+
+        </div>
+    </body>
+</html>

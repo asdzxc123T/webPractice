@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://localhost:5678/socket.io/socket.io.js"></script>
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                var socket = io.connect("http://localhost:5678");
+                var paper = document.getElementById("c1");
+                var pen = paper.getContext("2d");
+
+                var p1X = 150;
+                var p2X = 150;
+                $("#c1").mousemove(function(e) {
+                    // $("#c1").offset().top
+                    // $("#c1").offset().left // 8
+                    p1X = e.pageX - 58; // 100 / 2 + 8
+                    socket.emit("drawP1", p1X);
+                });
+
+                var ball = new Image();
+                ball.src = "ball.png";
+                var t;
+                var x = 185;
+                var y = 285;
+                var vx = 2;
+                var vy = 2;
+
+                pen.save()
+                pen.fillStyle = "#000000"
+                pen.fillRect(0, 0, 400, 600);
+                pen.fillStyle = "red";
+                pen.fillRect(p1X, 590, 100, 10);
+                pen.fillStyle = "blue";
+                pen.fillRect(p2X, 0, 100, 10);
+                pen.restore();
+
+                socket.on("drawP2onP1", function(x) {
+                    p2X = 300 - x;
+                });
+
+                socket.on("drawBallConfirm", function(xy) {
+                    x = xy.x;
+                    y = xy.y;
+                });
+
+                var guest = false;
+                socket.on("p2EnterConfirm", function() {
+                    guest = true;
+                    $("h1").append("Guest Enter");
+                })
+
+                $("#c1").mouseup(function() {
+                    if(guest) {
+                        guest = false;
+                        socket.emit("gameStart");
+                    }
+                });
+
+                socket.on("gameStartConfirm", function() {
+                    $("h1").empty();
+                    t = setInterval(function() {
+                        if (y >= 570) {
+                            $("h1").text("You lose");
+                            clearInterval(t);
+                        }
+                        else if (y <= 0) {
+                            $("h1").text("You win");
+                            clearInterval(t);
+                        }
+                        if (x >= 370) {
+                            vx = -vx;
+                            x = 370;
+                        }
+                        else if (x <= 0) {
+                            vx = -vx;
+                            x = 0;
+                        }
+                        if (y >= 560 && p1X <= x + 15 && p1X >= x - 85) {
+                            vy = -vy;
+                            y = 560;
+                        }
+                        else if (y <= 10 && p2X <= x + 15 && p2X >= x - 85) {
+                            vy = -vy;
+                            y = 10;
+                        }
+                        x += vx;
+                        y += vy;
+                        pen.save()
+                        pen.fillStyle = "#00000011"
+                        pen.fillRect(0, 0, 400, 600);
+                        pen.fillStyle = "red";
+                        pen.fillRect(p1X, 590, 100, 10);
+                        pen.fillStyle = "blue";
+                        pen.fillRect(p2X, 0, 100, 10);
+                        pen.restore();
+                        socket.emit("drawBall", {"x" : x, "y" : y})
+                        pen.drawImage(ball, x, y, 30, 30);
+                    }, 0);
+                });
+            });
+        </script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <canvas id="c1" width="400px" height="600px"></canvas>
+        <h1></h1>
+    </body>
+</html>

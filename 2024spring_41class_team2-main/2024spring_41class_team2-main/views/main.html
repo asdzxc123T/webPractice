@@ -1,0 +1,3272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEGREEN</title>
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/theme/ambiance.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/mode/clike/clike.min.js"></script>
+
+
+</head>
+<body>
+    
+    <div id="main_div">
+        <div id="navigator">
+            <div style="display:flex; align-items: center;">
+                <img src="/assets/logo.png" id="logo">
+                <div id="t1">&nbsp;BE</div>
+                <div id="t2">GREEN</div>
+            </div>
+            
+            <div id="nav1">
+                <div id="nav1_1">Welcome Back!</div>
+                <div id="nav1_2"></div>
+            </div>
+        </div>
+        <div style="margin:auto; width: 90%; height:3px; background-color: #79D96A;"></div>
+        <div id="main_wrapper">
+            <div id="left_bar">
+                <div style="height: 30px;"></div>
+                <div id="btn_ov">
+                    &nbsp;&nbsp;Overview
+                </div>
+                <div id="btn_pi">
+                    &nbsp;&nbsp;Personal Info
+                </div>
+                <div id="btn_ic">
+                    &nbsp;&nbsp;Input Code
+                </div>
+                <div id="btn_cal">
+                    &nbsp;&nbsp;Calendar
+                </div>
+                <div id="btn_st">
+                    &nbsp;&nbsp;Statistics
+                </div>
+                <div id="btn_co">
+                    &nbsp;&nbsp;Contact
+                </div>
+            </div>
+            <div id="contents">
+                <div style="height: 30px;"></div>
+
+                <!-- 1. overview -->
+                <div id="ov_wpr">
+                    <!-- overview contents -->
+                    <div id="ov1">
+                        <div id="ov1_t1">Welcome to BEGREEN!</div>
+                        Embrace eco-friendly practices to protect our environment!
+                    </div>
+                    <div id="ov2">
+                        <div id="ov2_0" class="ov2_title">Overview of this Week</div>
+                        <div class="ov_stat_cont">
+                            <div id="ov2_1" class="ov_stat">
+                                <div id="ov2_1_t1" class="ov_thumbnail">This week's Green Commitment</div>
+                                <!-- <img src="assets\overview_img_1.png" alt="exercise stat"> -->
+                                <div id="ov2_1_t2_wpr" class="ov_content_wpr">
+                                    <div id="ov2_2_t2_a" class="ov_content">
+                                        <div class="donut" id="ov_donut_1" style="margin-top: 20px;">
+                                            <div class='wave -three' id="ov_wave_1"></div>
+                                            <div class='wave -two' id="ov_wave_1"></div>
+                                            <div class='wave' id="ov_wave_1"></div>
+                                            <img src="/assets/ov_img2.svg" alt="Donut Image">
+                                        </div>
+                                        <div style="display: inline-block; margin-top:5px;">
+                                            <div id="ov2_1_t2_a" class="ov_content" style="float: left; font-size: 155%; font-family: 'Raleway'; font-weight: bold">0</div>
+                                            <div id="ov2_1_t2_default" class="ov_content" style="float: right; font-size: 155%; font-family: 'Raleway'; font-weight: bold"> / 7</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ov2_2" class="ov_stat">
+                                <div id="ov2_2_t1" class="ov_thumbnail">This week's CO2 Reduction</div>
+
+                                <div id="ov2_2_t2_wpr" class="ov_content_wpr">
+                                    <div id="ov2_2_t2_a" class="ov_content">
+                                        <!-- CO2 -->
+                                        <div class="ov_donut" id="over_donut">
+                                            <div class="donut" id="ov_donut_2">
+                                                <div class='wave -three' id="ov_wave_2"></div>
+                                                <div class='wave -two' id="ov_wave_2"></div>
+                                                <div class='wave' id="ov_wave_2"></div>
+                                                <!-- <img src="/assets/ov_img3.png" alt="Donut Image" class="ov_img_aaa"> -->
+                                                <div class="ov_img_aaa">
+                                                    <img src="/assets/ov_img3.png" alt="Donut Image">
+                                                </div>
+                                                <!-- <img src="/assets/ov_img3.png" alt="Donut Image"> -->
+                                                <!-- <span class="tooltiptext">Tooltip text</span> -->
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- <span class="tooltiptext">Tooltip text</span> -->
+                                        <div id="co2" style="font-size: 155%; font-weight:bold">1 % decreased!</div>
+                                    </div>
+                                    <!-- <div id="ov2_2_t2_b" class="ov_content">Skeletal Muscle Mass
+                                        <div class="donut" id="ov_donut_3"> 
+                                            <img src="/assets/ov_img4.png" alt="Donut Image">
+                                        </div>
+                                        <div id="muscle">2 kg left!</div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ov3">
+                        <div id="ov3_0" class="ov2_title">Why Reducing Carbon Emission is Important?</div>
+                        <div id="ov3_stat_cont" class="ov_stat_cont">
+                            <div id="ov3_1">
+                                Reducing carbon emission in programming isn't just about adhering to environmental ethics; it's a practical, beneficial approach that impacts operational costs, regulatory compliance, consumer perception, and the long-term viability of tech products.
+                            </div>
+                            <div style="margin: 3% 0px; width:100%;height:3px; background-color: #79D96A;"></div>
+                                <div id="ov3_1_t1">Tips for Reducing Carbon Emission in programming</div>
+                                <div id="ov3_2" class="ov3_stat">
+                                    <div id="ov3_2_1" class="ov3_stat_1">
+                                        <div id="ov3_2_t1">Method Calls and Computational Overhead: </div> 
+                                        Minimize method calls and computational overhead to reduce energy use and increase efficiency.
+                                    </div>
+                                    <div id="ov3_2_2" class="ov3_stat_1"> <!--here-->
+                                        <div id="ov3_2_t2">Unnecessary Computations: </div>
+                                        Energy waste pattern from unnecessary computations performed through double or triple nested loops.
+                                    </div>
+                                    <div id="ov3_2_3" class="ov3_stat_1">
+                                        <div id="ov3_2_t3">Repeatedly Declaring Variables: </div>
+                                        Energy waste pattern from repeatedly declaring unnecessary variables inside loops.
+                                    </div>
+                                </div>
+                                <div id="ov3_1_t2">Tips for Reducing Carbon Emission in programming</div>
+                                <div id="ov3_3" class="ov3_stat">
+                                    <div id="ov3_3_1" class="ov3_stat_1">
+                                        <div id="ov3_3_t1">Increased Calorie Intake: </div>
+                                        Consume more calories than your body burns. Choose nutrient-dense foods like nuts, dried fruits, whole-grain breads, and lean meats to increase your calorie intake healthily.
+                                    </div>
+                                    <div id="ov3_3_2" class="ov3_stat_1">
+                                        <div id="ov3_3_t2">Strength Training: </div>
+                                        Engage in resistance training to build muscle mass. Lifting weights helps increase muscle size, which can contribute to a healthy weight gain when combined with proper nutrition.
+                                    </div>
+                                    <div id="ov3_3_3" class="ov3_stat_1">
+                                        <div id="ov3_3_t3">Frequent Meals: </div>
+                                        Have smaller, more frequent meals throughout the day to continuously fuel your body. This helps in adding calories and nutrients to support weight gain without causing discomfort from large meals.
+                                    </div>
+                                </div>
+                            <div id="ov3_1_t3">Tips for Reducing Carbon Emission in programming</div>
+                            <div id="ov3_4" class="ov3_stat">
+                                <div id="ov3_4_1" class="ov3_stat_1">
+                                    <div id="ov3_4_t1">Protein Intake: </div>
+                                    ddd
+                                </div>
+                                <div id="ov3_4_2" class="ov3_stat_1">
+                                    <div id="ov3_4_t2">Progressive Overload: </div>
+                                    Gradually increase the weight and intensity of your workouts. Progressive overload challenges your muscles, promoting growth and increasing muscle mass over time.
+                                </div>
+                                <div id="ov3_4_3" class="ov3_stat_1">
+                                    <div id="ov3_4_t3">Rest and Recovery: </div>
+                                    Allow time for muscles to recover with adequate rest between workout sessions. Recovery is when muscle repair and growth occur, so skipping rest can impede muscle mass gain.
+                                </div>
+                            </div>
+                            <div id="ov3_1_t4">Tips for Reducing Carbon Emission in programming</div>
+                            <div id="ov3_5" class="ov3_stat">
+                                <div id="ov3_5_1" class="ov3_stat_1">
+                                    <div id="ov3_5_t1">Calorie Reduction with Nutrient Density: </div>
+                                    Decrease your calorie intake but ensure you still get plenty of vitamins and minerals. This helps in reducing muscle mass without compromising overall health.
+                                </div>
+                                <div id="ov3_5_2" class="ov3_stat_1">
+                                    <div id="ov3_5_t2">Cardiovascular Exercise: </div>
+                                    Incorporate more cardio into your routine. Activities like running, swimming, or cycling can reduce muscle mass, especially when not combined with strength training.
+                                </div>
+                                <div id="ov3_5_3" class="ov3_stat_1">
+                                    <div id="ov3_5_t3">Reduce Protein Intake: </div>
+                                    Lower your protein intake to just meet the daily recommended amount. Excess protein can lead to muscle mass maintenance, so reducing it can help in decreasing muscle mass. However, ensure it's done carefully to avoid muscle wasting.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 2. Personal Info -->
+                <div id="pi_wpr">
+                    <div id="pi1">
+                        <div id="pi1_t1">Personal Info</div>
+                        Let's get to know you better!
+                    </div>
+                    <div id="pi2">
+                        <div class="pi-container">
+                            <div id="profile_picture_container">
+                                <img src="assets/bronze.png" alt="Tier Image" id="profile_img">
+                            </div>
+                            <div id="account_info_container">
+                                <div id="container1">
+                                    <div id="person_name"></div>
+                                    <!-- TODO: we have to get tier info from db or calculate the tier -->
+                                    <div id="tier_badge">Bronze</div> 
+                                </div>
+                                <div id="container2" style="margin-right: 15%; flex-grow:4;">
+                                    <div id="job" style="flex-grow: 3;margin-top:15px;">JOB</div>
+                                    <div id="age" style="flex-grow: 3;margin-top:15px;">AGE</div>
+                                    <div id="gender" style="flex-grow: 3;margin-top:15px;">GENDER</div>
+                                </div>
+                                <button id="submitBtn_edit" class="submitBtn" style="width:70px;">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pi-container-2" style="display: none;">
+                        <!-- <div id="pi3" class="info_box">
+                            <div id="job">JOB</div>
+                            <div id="age">AGE</div>
+                            <div id="gender">GENDER</div>
+                        </div> -->
+                        <div id="pi4" class="info_box">
+                            <div>
+                                <input type="text" id="job2" placeholder="Write your JOB">
+                            </div>
+                            <div>
+                                <input type="text" id="age2" placeholder="Write your AGE">
+                            </div>
+                            <div>
+                                <input type="radio" name="gender2" id="gender2" value="Male" style="width: 20px;"><span style="color: white;">Male</span>
+                                <input type="radio" name="gender2" id="gender3" value="Female" style="width: 20px;"><span style="color: white;">Female</span>
+                            </div>
+                            <button id="submitBtn_now" class="submitBtn">Submit</button>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+
+                <!-- 3. Input Code -->
+                <div id="ic_wpr">
+                    <!-- input code contents -->
+                    <div id="ic_init">
+                        <div id="ic1">
+                            <div id="ic1_t1">Input Code</div>
+                            Input your own java code, Analyze the carbon emission
+                        </div>
+                        <div id="ic2">
+                            <div id="ic2_0" class="ic2_title_1">Input your own java code!</div>
+
+                            <div id="ic2_1" class="ic2_title_2" style="display: flex; flex-direction: row;">
+                                <div>
+                                    Upload your code ( .txt or .java ): 
+                                </div>
+                                <div class="ic_upload_div">
+                                    <label for="file">
+                                        <div class="ic_upload"><div style="margin: 7px 0px 0px 24px;">Upload</div></div>
+                                    </label>
+                                    
+                                    <input type="file" name="file" id="file" accept=".java, .txt">                    
+                                </div>
+                            </div>
+                            <form>
+                                <textarea id="IC_textarea" placeholder="Input your own java code!"></textarea>
+                            </form>
+        
+                        </div>
+                        <div id="ic3">
+                            <button class="ic3_btn">
+                                Make it GREEN!
+                            </button>
+                        </div>
+                    </div>
+                    <div id="ic_loading">
+                        
+                        <div style="display: block;">
+                            <div class="loader"></div>
+                            <div class="ic_loading_text">
+                                Wait a moment
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="ic_res">
+                        <div id="ic_res_textarea">
+                            Thanks for using our service.<br>
+                            Your consideration will save the Earth!
+                        </div>
+                        <div style="margin:auto; width: 100%-20px; height:3px; background-color: #79D96A; margin-left: 20px;"></div>
+                        <div id="ic_res_before">
+                            <div id="ic_res_before_text1" class="ic_res_before_text1">Before</div>
+                            <div id="ic_res_before_CE" class="ic_res_before_CE">Carbon Emission : </div>
+                            <form>
+                                <textarea id="IC_textarea_before"></textarea>
+                            </form>
+        
+                        </div>
+                        <div id="ic_res_after">
+                            <div id="ic_res_after_text1" class="ic_res_after_text1">After</div>
+                            <div id="ic_res_after_CE" class="ic_res_after_CE">Carbon Emission : </div>
+                            <form>
+                                <textarea id="IC_textarea_after"></textarea>
+                            </form>
+        
+                        </div>
+                        <div id="ic_res_buttons">
+                            <button id="ic_res_buttons_back">
+                                Back
+                            </button>
+                            <button id="ic_res_buttons_download">
+                                Download
+                            </button>
+                        </div>
+
+                        <!-- Add Patterns -->
+                        <div id="ic_res_patterns">
+                            <div id="ic_res_pattern" class="ic2_title_pattern">
+                                <p id="resulted_pattern">resulted_pattern:</p>
+                            </div>
+                            <div id="ic_res_after_pattern">
+                                <p id="p1" class="pattern-title">P1. Duplicate Function Call Pattern</p>
+                                <p id="p1_s" class="pattern-description">Store functions that are repeatedly called, such as arr.size(), in a variable.</p>
+                                <p id="p2" class="pattern-title">P2. Nested If Pattern</p>
+                                <p id="p2_s" class="pattern-description">Multiple if statements can be combined into a single if statement using &&.</p>
+                                <p id="p3" class="pattern-title">P3. Duplicate Object Declaration Pattern</p>
+                                <p id="p3_s" class="pattern-description">Instead of repeatedly declaring an object inside a for loop, declare the object outside the loop and use its functions repeatedly.</p>
+                                <p id="p4" class="pattern-title">P4. Switch Pattern</p>
+                                <p id="p4_s" class="pattern-description">When using if-else if statements six or more times, switch to a switch statement.</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+
+                <!-- 4. calendar -->
+                <div id="ca_wpr">
+                    <!-- calendar contents -->
+                    <div id="ca">
+                        <div id="ca_banner">
+                            <div style="display: flex;">
+                                <div id="ca_mo" style="color: white">&nbsp;June</div>
+                                <div id="ca_yr" style="color: #79D96A">&nbsp;2024</div>
+                                <div id="ca_we" style="color: white">&nbsp;4th</div>
+                            </div>
+                            <div id="ca_arrows" style="display: flex;">
+                                <button id="prev_w"><i class="fas fa-chevron-left"></i></button>
+                                <div style="width: 10px;"></div>
+                                <button id="next_w"><i class="fas fa-chevron-right"></i></button>
+                                <div style="width: 10px;"></div>
+                            </div>
+                           
+                        </div>
+
+                        <div id="ca_detail_caremi">
+                            <div id="ca_detail_caremi_t1">
+                                Sun 06. 9 
+                            </div>
+
+                            <div id="ca_res_before">
+                                <div id="ic_res_before_text1" class="ic_res_before_text1">Before</div>
+                                <div id="ca_res_before_CE" class="ca_res_before_CE">Carbon Emission : </div>
+                                <form>
+                                    <textarea id="CA_textarea_before"></textarea>
+                                </form>
+                                
+                            </div>
+                            <div id="ca_res_after">
+                                <div id="ic_res_after_text1" class="ic_res_after_text1">After</div>
+                                <div id="ca_res_after_CE" class="ca_res_after_CE">Carbon Emission : </div>
+                                <form>
+                                    <textarea id="CA_textarea_after"></textarea>
+                                </form>
+                                
+                            </div>
+                            <div id="detail_caremi_btn">
+                                <button id="detail_caremi_cancel">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div id="ca_detail_wr">
+
+                            <div id="ca_detail_t1">
+                                Sun 06. 9 
+                            </div>
+
+                            <div id="detail_TC">
+                                Today's Comment
+                            </div>
+                            <form>
+                                <textarea id="TC_textarea" placeholder="Write your comment!"></textarea>
+                            </form>
+                            
+                            <div id="detail_SC">
+                                Schedule                            
+                            </div>
+                            
+                            <form>
+                                <textarea id="SC_textarea" placeholder="Write your schedule!"></textarea>
+                            </form>
+
+                            <div id="detail_btns">
+                                <button id="detail_cancel">
+                                    Cancel
+                                </button>
+                                <button id="detail_update">
+                                    Update
+                                </button>
+
+                            </div>                            
+                        </div>
+
+                        <!-- abstract -->
+                        <div id="ca_sun">
+                            <div id="ca_sun_t1">
+                                Sun 06. 23
+                            </div>
+                            <!-- if data exists -->
+                            <div id="ca_sun_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "sun_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="sun_caremi_before" style="width: 40px;">None</div>                                         
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "sun_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="sun_caremi_after" style="width: 40px;">None</div>                                           
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="sun_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="sun_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="sun_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="sun_sch">What is your schdule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="sun_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="ca_mon">
+                            <div id="ca_mon_t1">
+                                Mon 06. 24
+                            </div>
+                            <div id="ca_mon_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "mon_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="mon_caremi_before" style="width: 40px;">None</div>                                           
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "mon_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="mon_caremi_after" style="width: 40px;">None</div>                                            
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="mon_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="mon_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="mon_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="mon_sch">What is your schedule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="mon_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+                        </div>
+
+                        <div id="ca_tue">
+                            <div id="ca_tue_t1">
+                                Tue 06. 25
+                            </div>
+                            <div id="ca_tue_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "tue_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="tue_caremi_before" style="width: 40px;">None</div>                                            
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "tue_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="tue_caremi_after" style="width: 40px;">None</div>                                            
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="tue_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="tue_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="tue_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="tue_sch">What is your schedule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="tue_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+                        </div>
+
+                        <div id="ca_wed">
+                            <div id="ca_wed_t1">
+                                Wed 06. 26
+                            </div>
+                            <div id="ca_wed_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "wed_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="wed_caremi_before" style="width: 40px;">None</div>                                            
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "wed_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="wed_caremi_after" style="width: 40px;">None</div>                                            
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="wed_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="wed_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="wed_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="wed_sch">What is your schedule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="wed_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+                        </div>
+
+                        <div id="ca_thu">
+                            <div id="ca_thu_t1">
+                                Thu 06. 27
+                            </div>
+                            <div id="ca_thu_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "thu_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="thu_caremi_before" style="width: 40px;">None</div>                                            
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "thu_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="thu_caremi_after" style="width: 40px;">None</div>                                            
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="thu_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="thu_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="thu_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="thu_sch">What is your schedule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="thu_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+                        </div>
+
+                        <div id="ca_fri">
+                            <div id="ca_fri_t1">
+                                Fri 06. 28
+                            </div>
+                            <div id="ca_fri_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "fri_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="fri_caremi_before" style="width: 40px;">None</div>                                            
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "fri_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="fri_caremi_after" style="width: 40px;">None</div>                                            
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="fri_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="fri_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="fri_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="fri_sch">What is your schedule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="fri_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+                        </div>
+
+                        <div id="ca_sat">
+                            <div id="ca_sat_t1">
+                                Sat 06. 29
+                            </div>
+                            <div id="ca_sat_abbr">
+
+                                
+                                <div style="width: calc(380px + 5vw);">
+                                    <div style="display: flex;">
+                                        <div style="display: flex;">
+                                            <div id = "sat_t1" style="width: 145px;">Original Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="sat_caremi_before" style="width: 40px;">None</div>                                            
+                                        </div>
+
+                                        <div style="width:20px"></div>
+
+                                        <div style="display: flex;">
+                                            <div id = "sat_t2" style="width: 145px;">Reduced Carbon Emission</div>                                        
+                                            :&nbsp;
+                                            <div id="sat_caremi_after" style="width: 40px;">None</div>                                            
+                                        </div>
+                                        <div style="width:20px"></div>
+
+                                    </div>
+                                </div>
+
+                                <!-- TC -->
+                                <div id="sat_cmm_wr" style="width: 400px;">
+                                    Today's Comment :
+                                    <div id="sat_cmm">Write your comment!</div>
+                                </div>
+
+                                <!-- SC -->
+                                <div id="sat_sch_wr" style="width: 400px;">
+                                    Schedule :
+                                    <div id="sat_sch">What is your schedule?</div>
+                                </div>
+
+                                <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
+                                    <i id="sat_edit" class="fas fa-edit fa-lg"></i>
+                                </div>
+                                <div style="width: 20px;"></div>
+
+                            </div>
+                        </div>
+
+                        <div style="height: 100px;"></div>
+                    </div>
+                </div>
+
+                <!-- 5. statistics -->
+                <div id="st_wpr">
+                    <!-- statistic contents -->
+                    <div id="st1">
+                        <div id="st1_t1">Statistics of Fixed!</div>
+                        <div id="st1_t2">Get valuable insights based on your green commitments and user activities.</div>
+                    </div>
+                    <div id="st2">
+                        <div id="st1_t1">Fixed Statistics</div>
+                        <div style="display:flex; height:500px;">
+                            <canvas id="chart1" style="flex-grow: 5; width:400px; height:500px;"></canvas>
+                            <canvas id="chart2" style="flex-grow: 5; width:400px; height:500px; margin-left:min(100px,3vw)"></canvas>
+                        </div>
+                        <div style="display:flex; height:300px;">
+                            <div id="empty_patterns" style="flex-grow: 5; width:400px; height:300px;">
+                            </div>
+                            <div id="patterns" style="flex-grow: 5; margin-top: 20px; max-width: 500px;">
+                                <p style="color: white">P1. Duplicate Function Call Pattern</p>
+                                <!-- <p style="color: white">Store functions that are repeatedly called, such as arr.size(), in a variable.</p> -->
+                                <p style="color: white">P2. Nested If Pattern</p>
+                                <!-- <p style="color: white">Multiple if statements can be combined into a single if statement using &&.</p> -->
+                                <p style="color: white">P3. Duplicate Object Declaration Pattern</p>
+                                <!-- <p style="color: white">Instead of repeatedly declaring an object inside a for loop, declare the object outside the loop and use its functions repeatedly. </p> -->
+                                <p style="color: white">P4. Switch Pattern</p>
+                                <!-- <p style="color: white">When using if-else if statements six or more times, switch to a switch statement.</p> -->
+                            </div>
+                        </div>
+            
+                    </div>
+                    
+                </div>
+
+                <!-- 6. contact -->
+                <div id="co_wpr">
+                    <!-- contact contents -->
+                    <div id="co1">
+                        <div id="co1_t1">Contact Us</div>
+                        <div id="co1_t2">If you have any questions or inconveniences using the service, please contact us at the address below.</div>
+                        
+                    </div>
+                    <div id="co2">
+                        <div id="co2_t1" class="personal_stat">
+                            <img src="/assets/co_img2.png" alt="Jinho Park">
+                            <br> Jinho Park <br>jinho142857@gmail.com
+                            <br> Suwon, Korea
+                            <div class="co2_bio"></div>
+                        </div>
+                        <div id="co2_t2" class="personal_stat">
+                            <img src="/assets/co_img3.png" alt="Jihwan Kim">
+                            <br> Jihwan Kim<br>navvh3@gmail.com
+                            <br> Suwon, Korea
+                            <div class="co2_bio"></div>
+                        </div>
+                        <!-- <div id="co2_t1" class="personal_stat">
+                            <img src="/assets/co_img_man.png" alt="이재원">
+                            <br> 이재원 <br>ljwyjs@gmail.com
+                            <br> Suwon, Korea
+                            <div class="co2_bio"></div>
+                        </div> -->
+                    </div>
+                    <div id="detail_FB">
+                        Please tell us about your message
+                    </div>
+                    <form>
+                        <textarea id="FB_textarea" placeholder="Write your comment!"></textarea>
+                    </form>
+                    <div id="send_cont">
+                        <button id="send_feedback">
+                            Send
+                        </button>
+
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <div style="margin:auto; width: 90%; height:3px; background-color: #79D96A;"></div>
+        <div id="footer">
+            <div style="color: #79D96A;">Need some help? Feel free to contact us!</div>
+            <div style="height: 5px;"></div>
+            <div>Copyright&nbsp;<i class="fas fa-copyright"></i>&nbsp;2023. <br>Jinho Park. jinho142857@gmail.com<br> Jihwan Kim. navvh3@gmail.com</div>
+        </div>
+    </div>
+    
+    <script>
+        
+        var code_data = {{ code_data | safe }};
+        var users_data = {{ users_data | safe }};
+        var users = {{ users | safe }};
+        
+        console.log(code_data)
+        var userindex=0;
+        
+    
+        url = String(window.location.href);
+        user = url.split("=")[1]
+
+        for(i=0;i<users.length;i++){
+            if(users[i]['username'] == user){
+                userindex=i
+            }
+        }
+
+        userData = users_data[userindex]
+
+        $("#nav1_2").text(user)
+        //console.log(userindex)
+        $("#person_name").text(user)
+        $('.pi-container-2').hide();
+
+        function checkWindowSize() {
+            var sun_t1 = document.getElementById("sun_t1");
+            var sun_t2 = document.getElementById("sun_t2");
+            //var sun_caremi_before = document.getElementById("sun_caremi_before");
+            //var sun_caremi_after = document.getElementById("sun_caremi_after");
+
+            var mon_t1 = document.getElementById("mon_t1");
+            var mon_t2 = document.getElementById("mon_t2");
+            //var mon_caremi_before = document.getElementById("mon_caremi_before");
+            //var mon_caremi_after = document.getElementById("mon_caremi_after");
+
+            var tue_t1 = document.getElementById("tue_t1");
+            var tue_t2 = document.getElementById("tue_t2");
+            //var tue_caremi_before = document.getElementById("tue_caremi_before");
+            //var tue_caremi_after = document.getElementById("tue_caremi_after");
+
+            var wed_t1 = document.getElementById("wed_t1");
+            var wed_t2 = document.getElementById("wed_t2");
+            //var wed_caremi_before = document.getElementById("wed_caremi_before");
+            //var wed_caremi_after = document.getElementById("wed_caremi_after");
+
+            var thu_t1 = document.getElementById("thu_t1");
+            var thu_t2 = document.getElementById("thu_t2");
+            //var thu_caremi_before = document.getElementById("thu_caremi_before");
+            //var thu_caremi_after = document.getElementById("thu_caremi_after");
+
+            var fri_t1 = document.getElementById("fri_t1");
+            var fri_t2 = document.getElementById("fri_t2");
+            //var fri_caremi_before = document.getElementById("fri_caremi_before");
+            //var fri_caremi_after = document.getElementById("fri_caremi_after");
+
+            var sat_t1 = document.getElementById("sat_t1");
+            var sat_t2 = document.getElementById("sat_t2");
+            //var sat_caremi_before = document.getElementById("sat_caremi_before");
+            //var sat_caremi_after = document.getElementById("sat_caremi_after");
+
+            var windowWidth = window.innerWidth;
+
+            if (windowWidth < 1400) {
+                sun_t1.innerHTML = "Old";
+                sun_t1.style.width = "30px";
+                sun_t2.innerHTML = "New";
+                sun_t2.style.width = "30px";
+
+                mon_t1.innerHTML = "Old";
+                mon_t1.style.width = "30px";
+                mon_t2.innerHTML = "New";
+                mon_t2.style.width = "30px";
+
+                tue_t1.innerHTML = "Old";
+                tue_t1.style.width = "30px";
+                tue_t2.innerHTML = "New";
+                tue_t2.style.width = "30px";
+
+                wed_t1.innerHTML = "Old";
+                wed_t1.style.width = "30px";
+                wed_t2.innerHTML = "New";
+                wed_t2.style.width = "30px";
+
+                thu_t1.innerHTML = "Old";
+                thu_t1.style.width = "30px";
+                thu_t2.innerHTML = "New";
+                thu_t2.style.width = "30px";
+
+                fri_t1.innerHTML = "Old";
+                fri_t1.style.width = "30px";
+                fri_t2.innerHTML = "New";
+                fri_t2.style.width = "30px";
+
+                sat_t1.innerHTML = "Old";
+                sat_t1.style.width = "30px";
+                sat_t2.innerHTML = "New";
+                sat_t2.style.width = "30px";
+
+
+            } else {
+                sun_t1.innerHTML = "Original Carbon Emission";
+                sun_t1.style.width = "145px";
+                sun_t2.innerHTML = "Reduced Carbon Emission";
+                sun_t2.style.width = "145px";
+
+                mon_t1.innerHTML = "Original Carbon Emission";
+                mon_t1.style.width = "145px";
+                mon_t2.innerHTML = "Reduced Carbon Emission";
+                mon_t2.style.width = "145px";
+
+                tue_t1.innerHTML = "Original Carbon Emission";
+                tue_t1.style.width = "145px";
+                tue_t2.innerHTML = "Reduced Carbon Emission";
+                tue_t2.style.width = "145px";
+
+                wed_t1.innerHTML = "Original Carbon Emission";
+                wed_t1.style.width = "145px";
+                wed_t2.innerHTML = "Reduced Carbon Emission";
+                wed_t2.style.width = "145px";
+
+                thu_t1.innerHTML = "Original Carbon Emission";
+                thu_t1.style.width = "145px";
+                thu_t2.innerHTML = "Reduced Carbon Emission";
+                thu_t2.style.width = "145px";
+
+                fri_t1.innerHTML = "Original Carbon Emission";
+                fri_t1.style.width = "145px";
+                fri_t2.innerHTML = "Reduced Carbon Emission";
+                fri_t2.style.width = "145px";
+
+                sat_t1.innerHTML = "Original Carbon Emission";
+                sat_t1.style.width = "145px";
+                sat_t2.innerHTML = "Reduced Carbon Emission";
+                sat_t2.style.width = "145px";
+            }
+        }
+
+
+        dateList = [['240602','240603','240604','240605','240606','240607','240608'],
+                    ['240609','240610','240611','240612','240613','240614','240615'],
+                    ['240616','240617','240618','240619','240620','240621','240622'],
+                    ['240623','240624','240625','240626','240627','240628','240629'],
+                    ['240630','240701','240702','240703','240704','240705','240706'],
+                    ['240707','240708','240709','240710','240711','240712','240713'],
+                    ['240714','240715','240716','240717','240718','240719','240720'],
+                    ['240721','240722','240723','240724','240725','240726','240727'],
+                    ['240728','240729','240730','240731','240801','240802','240803']]
+
+        DAY=0
+
+        function updateTier() {
+            fetch('/getcodeData')
+            .then(response => response.json())
+            .then(data => {
+                code_data = JSON.parse(data)
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+            userCodeCount = 0;
+            for (i = 0; i < code_data.length; i++) {
+                if (code_data[i]['user_id'] == userindex + 1) {
+                    userCodeCount++;
+                }
+            }
+            
+            console.log(userCodeCount,userindex)
+
+            if (userCodeCount < 10) {
+                $('#tier_badge').text('Bronze');
+                $('#tier_badge').css('color', '#b87f0d');
+                $('#profile_img').attr('src', '/assets/bronze.png');
+            } else if (userCodeCount < 20) {
+                $('#tier_badge').text('Silver');
+                $('#tier_badge').css('color', '#D3D3D3');
+                $('#profile_img').attr('src', '/assets/silver.png');
+            } else if (userCodeCount < 30) {
+                $('#tier_badge').text('Gold');
+                $('#tier_badge').css('color', '#FFD700');
+                $('#profile_img').attr('src', '/assets/gold.png');
+            } else{
+                $('#tier_badge').text('Platinum');
+                $('#tier_badge').css('color', '#dadfe6');
+                $('#profile_img').attr('src', '/assets/platinum.png');
+            }
+                
+        }
+
+        updateTier();
+
+        function updateDiary(week) {
+
+            console.log(55555, week)
+            fetch('/getcodeData')
+            .then(response => response.json())
+            .then(data => {
+                code_data = JSON.parse(data)
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+            usersCode = new Array();
+            for (i = 0; i < code_data.length; i++) {
+                if (code_data[i]['user_id'] == userindex + 1) {
+                    usersCode.push(code_data[i]);
+                }
+            }
+            console.log(usersCode);
+
+
+            const weekData = dateList[week];
+            console.log(weekData);
+
+            fetch('/getData')
+            .then(response => response.json())
+            .then(data => {
+                userData = JSON.parse(data)[userindex];
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+
+            updateDay('sun', weekData[0], userData, usersCode);
+            updateDay('mon', weekData[1], userData, usersCode);
+            updateDay('tue', weekData[2], userData, usersCode);
+            updateDay('wed', weekData[3], userData, usersCode);
+            updateDay('thu', weekData[4], userData, usersCode);
+            updateDay('fri', weekData[5], userData, usersCode);
+            updateDay('sat', weekData[6], userData, usersCode);
+        }
+                
+
+        function updateDay(dayId, date, userData, usersCode) {
+            modified = 0;
+            if (usersCode.length) {
+                temp = -1;
+                for (i = 0; i < usersCode.length; i++) {
+                    tempDate = String(usersCode[i]['created_at'].slice(2,4) + usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+                    if (date == tempDate) {
+                        temp = usersCode[i];
+                    }
+                }
+
+                if (temp != -1) {
+                    modified = 1;
+                    $('#ca_' + dayId).css({
+                        'background-color': '#79D96A75',
+                        'border': '#79D96A solid',
+                        'border-width': '5px 0px 0px 0px',
+                        'border-bottom-left-radius': '20px',
+                        'border-bottom-right-radius': '20px'
+                    });
+                     
+                    $('#' + dayId + '_caremi_before').text(calc_CE(temp['before_code_time'],temp['before_code_mem']));
+                    $('#' + dayId + '_caremi_after').text(calc_CE(temp['after_code_time'],temp['after_code_mem']));
+                    $('#ca_' + dayId + '_abbr').css({
+                        'visibility': 'visible'
+                    });
+                }
+            }
+            if (userData[date] != null) {
+                $('#ca_' + dayId).css({
+                    'background-color': '#79D96A75',
+                    'border': '#79D96A solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                var inputString = userData[date];
+                var stringArray = inputString.split('\\n');
+
+                $('#' + dayId + '_cmm').text(stringArray[0]);
+                $('#' + dayId + '_sch').text(stringArray[1]);
+
+                $('#ca_' + dayId + '_abbr').css({
+                    'visibility': 'visible'
+                });
+            } 
+            else {
+                if (modified == 0) {
+                    $('#ca_' + dayId).css({
+                        'background-color': 'rgba(128, 128, 128, 0.7)',
+                        'border': '#79D96A75 solid',
+                        'border-width': '5px 0px 0px 0px',
+                        'border-bottom-left-radius': '20px',
+                        'border-bottom-right-radius': '20px'
+                    });
+                    $('#ca_' + dayId + '_abbr').css({
+                        'visibility': 'hidden'
+                    });
+                }
+            }
+        }
+
+        
+        //DB insertion 
+        function insertUserCalendar(week,Newdate){
+            console.log($('#TC_textarea').val(),$('#SC_textarea').val())
+
+            date=String(Newdate.getYear()).slice(1,3) + (String(parseInt(Newdate.getMonth())+1).length==1?'0':'') + String(parseInt(Newdate.getMonth())+1) + (String(parseInt(Newdate.getDate())+DAY+1).length==1?'0':'') + String(parseInt(Newdate.getDate())+DAY+1)
+
+            
+            contents = String($('#TC_textarea').val()+'\\n'+$('#SC_textarea').val())
+            $.ajax({
+                type: 'POST',  
+                url: '/cal',  
+                data: { userindex: userindex, date: date, contents: contents },
+                contentType: 'application/x-www-form-urlencoded', 
+                success: function(response) {
+                    //console.log('서버 응답:', response);
+                },
+                error: function(error) {
+                    //console.error('에러 발생:', error);
+                }
+            });
+            
+
+        }
+
+        //update chart
+        function update_chart1(week){
+            fetch('/getData')
+            .then(response => response.json())
+            .then(data => {
+                userData = JSON.parse(data)[userindex]
+            })
+            .catch(error => console.error('Error fetching data:', error));
+            // console.log(userData)
+            weekdata = dateList[week]
+            
+            
+
+            fetch('/getcodeData')
+            .then(response => response.json())
+            .then(data => {
+                code_data = JSON.parse(data)
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+            weekdata = dateList[week]
+
+            targetUserId = userindex+1
+            const filteredData = code_data.filter(item => item.user_id === targetUserId);
+            const dateCounts_user = filteredData.reduce((acc, item) => {
+                const date = item.created_at.split(' ')[0].replace(/-/g, '').slice(2); // '240606' 형식으로 변환
+                if (weekdata.includes(date)) {
+                    if (!acc[date]) {
+                        acc[date] = 0;
+                    }
+                    acc[date] += 1;
+                }
+                return acc;
+            }, {});
+
+            const dateCounts_user_ = weekdata.map(date => dateCounts_user[date] || 0);
+
+
+            var cnt = 0
+            for(i=0;i<7;i++){
+                // console.log(userData[weekdata[i]])
+                if(dateCounts_user_[i] > 0) {
+                    cnt+=1;
+                }
+            }
+
+
+            $('#ov2_1_t2_a').text(cnt)
+            donut1_progress = cnt*130/7; // Your progress value
+            // Create a dynamic style tag and append to the head
+            TODO:
+            
+            var style = `<style>
+                #ov_wave_1 {
+                    top: ${70 - donut1_progress}%;
+                }
+                #ov_wave_2 {
+                    top: ${70 - donut1_progress}%;
+                }
+
+            </style>`;
+            $('head').append(style);
+            
+        //    var style = '<style> #ov_wave_1 {top: ${70-donut1_progress}%;</style>';
+        //     $('head').append(style);
+            return cnt
+        }
+
+        //update chart
+        function update_chart2(week){
+            var usr;
+            fetch('/getcodeData')
+            .then(response => response.json())
+            .then(data => {
+                code_data = JSON.parse(data)
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+            // console.log(code_data)
+
+            weekdata = dateList[week]
+
+            const countByUserId = code_data.reduce((acc, item) => {
+                acc[item.user_id] = (acc[item.user_id] || 0) + 1;
+                return acc;
+            }, {});
+            
+            const time = code_data.reduce((acc, item) => {
+                const userId = item.user_id;
+                const createdAtDate = item.created_at.split(' ')[0].replace(/-/g, '').slice(2); 
+                
+                const beforeCE = parseFloat(calc_CE(item.before_code_time,item.before_code_mem)) 
+                const afterCE = parseFloat(calc_CE(item.after_code_time,item.after_code_mem)) 
+                // console.log(beforeCE,afterCE)
+
+                if(weekdata.includes(createdAtDate)){
+                    if (!acc[userId]) {
+                        acc[userId] = 0;
+                    }
+                    
+                    acc[userId] += (beforeCE-afterCE);
+                }
+
+                return acc;
+            }, {});
+
+            const resultArray = Object.keys(countByUserId).map(userId => ({
+                user_id: Number(userId),
+                count: countByUserId[userId]
+            }));
+
+            var res = 0;
+            
+            if(time[userindex+1]){
+                res = parseFloat(time[userindex+1]).toFixed(2)
+            }
+
+            // TODO: get the CO2 reduction from db CHECK : (user_index = userindex+1)
+            $('#co2').text(String(res) + 'g decreased') 
+                
+            
+            
+        }
+
+        //update stat
+        function update_stat(week){
+            fetch('/getcodeData')
+            .then(response => response.json())
+            .then(data => {
+                code_data = JSON.parse(data)
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
+            weekdata = dateList[week]
+            targetUserId = userindex+1
+            const filteredData = code_data.filter(item => item.user_id === targetUserId);
+            const dateCounts = code_data.reduce((acc, item) => {
+                const date = item.created_at.split(' ')[0].replace(/-/g, '').slice(2); // '240606' 형식으로 변환
+                if (weekdata.includes(date)) {
+                    if (!acc[date]) {
+                        acc[date] = 0;
+                    }
+                    acc[date] += 1;
+                }
+                return acc;
+            }, {});
+            const dateCounts_user = filteredData.reduce((acc, item) => {
+                const date = item.created_at.split(' ')[0].replace(/-/g, '').slice(2); // '240606' 형식으로 변환
+                if (weekdata.includes(date)) {
+                    if (!acc[date]) {
+                        acc[date] = 0;
+                    }
+                    acc[date] += 1;
+                }
+                return acc;
+            }, {});
+
+            const dateCounts_ = weekdata.map(date => dateCounts[date] / users.length || 0);
+            const dateCounts_user_ = weekdata.map(date => dateCounts_user[date] || 0);
+
+            STAT.data.datasets[0].data = dateCounts_user_
+            STAT.data.datasets[1].data = dateCounts_
+            console.log(dateCounts_,dateCounts_user_)
+
+            STAT.update()
+
+            // 패턴별 적용 횟수 계산
+            const patternCounts = [0, 0, 0, 0];
+            const patternCounts_user = [0, 0, 0, 0];
+
+            code_data.forEach(item => {
+                for (let i = 0; i < 4; i++) {
+                    if (item.pattern_num[i] === '1') {
+                        patternCounts[i] += 1 / users.length;
+                    }
+                }
+            });  
+
+            filteredData.forEach(item => {
+                for (let i = 0; i < 4; i++) {
+                    if (item.pattern_num[i] === '1') {
+                        patternCounts_user[i] += 1;
+                    }
+                }
+            });  
+
+            console.log(patternCounts_user,patternCounts)
+
+            const maxVal1 = Math.max(...patternCounts);
+            const maxVal2 = Math.max(...patternCounts_user);
+            maxVal = maxVal2
+            if(maxVal1>maxVal2){
+                maxVal = maxVal1
+            }
+            
+            function normalize(arr) {
+                return arr.map(val => (maxVal === 0 ? 0 : (val / maxVal) * 5));
+            }
+
+            const normalizedPatternCounts = normalize(patternCounts);
+            const normalizedPatternCounts_user = normalize(patternCounts_user);
+
+            console.log(normalizedPatternCounts_user, normalizedPatternCounts);
+
+            STAT2.data.datasets[0].data = normalizedPatternCounts_user;
+            STAT2.data.datasets[1].data = normalizedPatternCounts;
+
+        }
+
+        function updateInfo(){
+            fetch('/getInfo')
+            .then(response => response.json())
+            .then(data => {
+                info = JSON.parse(data)
+                console.log(users,info)
+                users=info
+
+            })
+            .catch(error => console.error('Error fetching data:', error));  
+
+            if (users[userindex]['job'] != null) {
+            $('#job').text('JOB: ' + users[userindex]['job']);
+            }
+            if (users[userindex]['age'] != null) {
+                $('#age').text('AGE: ' + users[userindex]['age']);
+            }
+            if (users[userindex]['gender'] != null) {
+                $('#gender').text('GENDER: ' + users[userindex]['gender']);
+        }
+        }
+
+
+        window.onload = checkWindowSize;
+        window.onresize = checkWindowSize;
+
+        //input_code
+        document.getElementById('file').addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (file && (file.type === "text/plain" || file.name.endsWith(".java"))) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            editor.setValue(e.target.result);
+                            updateCodeMirrorStyle();
+                        };
+                        reader.readAsText(file);
+                    } else {
+                        alert("Please upload a valid .java or .txt file.");
+                    }
+                });
+
+        // CodeMirror 인스턴스 생성
+        var editor = CodeMirror.fromTextArea(document.getElementById('IC_textarea'), {
+            lineNumbers: true,     
+            mode: "text/x-java",     
+            tabSize: 4,            
+            indentWithTabs: true,   
+        });
+        var editor_after = CodeMirror.fromTextArea(document.getElementById('IC_textarea_after'), {
+            lineNumbers: true,     
+            mode: "text/x-java",     
+            tabSize: 4,            
+            indentWithTabs: true,   
+            
+        });
+        var editor_before = CodeMirror.fromTextArea(document.getElementById('IC_textarea_before'), {
+            lineNumbers: true,     
+            mode: "text/x-java",     
+            tabSize: 4,            
+            indentWithTabs: true,   
+        });
+        var editor_after_cal = CodeMirror.fromTextArea(document.getElementById('CA_textarea_after'), {
+            lineNumbers: true,     
+            mode: "text/x-java",     
+            tabSize: 4,            
+            indentWithTabs: true,   
+                
+        });
+        var editor_before_cal = CodeMirror.fromTextArea(document.getElementById('CA_textarea_before'), {
+            lineNumbers: true,     
+            mode: "text/x-java",     
+            tabSize: 4,            
+            indentWithTabs: true,   
+        });
+        
+        // div 개수에 따른 CSS 변경
+        var check_10lines = 0;
+        function updateCodeMirrorStyle() {
+            const codeDivs = editor.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+            const codeMirrorCode = editor.getWrapperElement().querySelector('.CodeMirror-code');
+            // console.log(codeDivs.length)
+            if (codeDivs.length < 10) {
+                if(check_10lines==0){
+                    codeMirrorCode.classList.add('few-lines');
+                }
+            } else {
+                check_10lines=1;
+                codeMirrorCode.classList.remove('few-lines');
+
+            }
+        }
+
+        editor.on('change', function() {
+            updateCodeMirrorStyle();
+            // console.log(check_10lines);
+            setTimeout(() => {
+                updateCodeMirrorStyle();
+            }, 1); 
+        });
+
+        updateCodeMirrorStyle();
+
+        
+        function calc_CE(t, memory){
+            t = parseFloat(t)
+            memory = parseFloat(memory)
+            uc = 0.3
+            Pc = 50
+            Pm = 5
+            PUE = 1.1
+            cores = 4
+            E = t * (cores * Pc * uc + memory * Pm) * PUE * 0.001
+            E = parseFloat(E).toFixed(2);
+            return E
+        }
+
+        function set_before(){
+            var code = editor.getValue()
+            editor_before.setValue(code);
+            const codeDivs = editor.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+            if (codeDivs.length < 10) {
+                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                spans.forEach(span => {
+                    span.style.marginLeft = '30px';
+                });
+            } 
+
+            const div = document.getElementById('ic_res_before_CE');
+            div.textContent = 'Carbon Emission : ' + before_CE;
+
+            
+        }
+
+        function set_after(){
+            var code = refactored
+
+            editor_after.setValue(code);
+            
+            
+            const codeDivs = editor.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+            if (codeDivs.length < 10) {
+                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                spans.forEach(span => {
+                    span.style.marginLeft = '30px';
+                });
+            } 
+
+            const div = document.getElementById('ic_res_after_CE');
+                div.textContent = 'Carbon Emission : ' + after_CE;
+            
+        }
+        
+
+        class Refactor {
+            constructor(lines) {
+                this.lines = lines;
+            }
+
+            init() {
+                for(let i = 0; i < this.lines.length; i++) {
+                    let line = this.lines[i];
+                    if(line.includes("public class Buggy")) {
+                        this.classStartIndex = i;
+                        break;
+                    }
+                }
+
+                this.buggyLines = ""
+                this.fixedLines = ""
+                this.duplicateFucntionFound = false;
+                this.nestedIfFound = false;
+                this.duplicateObjectFound = false;
+                this.debuggingOutputFound = false;
+                this.useSwitchFound = false;
+
+            }
+
+            countLeadingSpaces(text) {
+                let count = 0;
+                for(let i = 0; i < text.length; i++) {
+                    if (text[i] == ' ') {
+                        count++;
+                    } else {
+                        break;
+                    }
+                }
+                return count;
+            }
+            
+            removeNewline(text) {
+                return text.substring(0, text.length-2);
+            }
+            
+            toCapitalize(str) {
+                return str.replace(/\b\w/g, (match) => match.toUpperCase());
+            }
+
+            duplicateFucntion(dataType, functionName, returnType) {
+                let lineSize = this.lines.length;
+                
+                let buggyLine;
+                let arrayListVariableName;
+            
+                let pattern = new RegExp("\\b" + dataType + "\\s*<[^>]*>\\s+([a-zA-Z0-9_]+)\\s*=");
+                
+                let found = false;
+                for(let i = this.classStartIndex + 1; i < lineSize; i++) {
+                    let line = this.lines[i];   
+                    if(pattern.test(line)) {
+                        arrayListVariableName = pattern.exec(line)[1];
+                        let methodPattern = new RegExp("\\b" + arrayListVariableName + "\\." + functionName + "\\(\\)");
+                        console.log(arrayListVariableName);
+                        for(let j = i; j < lineSize; j++) {
+                            let line2 = this.lines[j];
+                            if(methodPattern.test(line2)) {
+                                buggyLine = j;
+                                found = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                if(found) {
+                    console.log("duplicateFounctionFound");
+            
+                    let count = this.countLeadingSpaces(this.lines[buggyLine]);
+                    this.lines[this.classStartIndex] = "public class Fixed {\n";
+                    this.lines[buggyLine] = this.lines[buggyLine].replace(arrayListVariableName + "." + functionName + "()", arrayListVariableName + this.toCapitalize(functionName));
+            
+                    let builder = "";
+                    for(let i = 0; i < count; i++) {
+                        builder = builder + " ";
+                    }
+                    builder = builder + (returnType + " " + arrayListVariableName + this.toCapitalize(functionName) + " = " + arrayListVariableName + "." + functionName +"();\n");
+                    this.lines.splice(buggyLine, 0, builder);
+                    this.duplicateFucntionFound = true;
+                }
+            }
+
+            IfState = class {
+                constructor(startIfIndex, endIfIndex, condition, conditionBody) {
+                    this.startIfIndex = startIfIndex;
+                    this.endIfIndex = endIfIndex;
+                    this.condition = condition;
+                    this.conditionBody = conditionBody;
+                }
+            }
+
+            nestedIf() {
+                let firstStartIfIndex;
+                let firstEndIfIndex;
+                let thirdStartIfIndex;
+                let thirdEndIfIndex;
+                let firstCondition;
+                let secondCondition;
+                let thirdCondition;
+                
+                let pattern = new RegExp("\\((.*?)\\)");
+                let lineSize = this.lines.length;
+                let found = false;
+                for(let i = this.classStartIndex + 1; i < lineSize; i++) {
+                    let line = this.lines[i];
+            
+                    if(line.includes("if")) {
+                        firstStartIfIndex = i;
+            
+                        if(pattern.test(line)) {
+                            firstCondition = pattern.exec(line)[1];
+                        }
+                    
+            
+                        for (let j = i + 1; j < lineSize; j++) {
+                            let line2 = this.lines[j];
+            
+                            if(line2.includes("if(")) {
+                                if(pattern.test(line2)) {
+                                    secondCondition = pattern.exec(line2)[1];
+                                }
+            
+                                for(let k = j + 1; k < lineSize; k++) {
+                                    let line3 = this.lines[k];
+            
+                                    if(line3.includes("if(")) {
+                                        found = true;
+                                        thirdStartIfIndex = k;
+            
+                                        if(pattern.test(line3)) {
+                                            thirdCondition = pattern.exec(line3)[1];
+                                        }
+            
+                                        for(let l = k + 1; l < lineSize; l++) {
+                                            let line4 = this.lines[l];
+                                            if(line4.includes("}")) {
+                                                thirdEndIfIndex = l;
+                                                break;
+                                            }
+                                        }
+            
+                                        let count = 0;
+                                        for(let l = k + 1; l < lineSize; l++) {
+                                            let line4 = this.lines[l];
+            
+                                            if(line4.includes("}")) {
+                                                count++;
+                                                if(count == 3) {
+                                                    firstEndIfIndex = l;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if(thirdEndIfIndex != 0) break;
+                                }
+                            }
+                            if(thirdEndIfIndex != 0) break;
+                        }
+                        // 중첩된 if 문이 발견되면 반복문 종료
+                        if (found) {
+                            break;
+                        }
+                    }
+                }
+                if(found) {
+                    this.lines[this.classStartIndex] = "public class Fixed {\n";
+                    
+                    let conditionBody = "";
+                    for(let i = thirdStartIfIndex + 1; i < thirdEndIfIndex; i++) {
+                        conditionBody = conditionBody + (this.lines[i] + "\n");
+                    }
+            
+                    let count = this.countLeadingSpaces(this.lines[firstEndIfIndex]);
+            
+                    console.log(firstStartIfIndex);
+                    for(let i = firstStartIfIndex; i <= firstEndIfIndex; i++) {
+                        this.lines.splice(firstStartIfIndex, 1);
+                    }
+            
+                    let builder = "";
+                    for(let i = 0; i < count; i++) {
+                        builder = builder + " ";
+                    }
+                    builder = builder + "if((" + firstCondition + " && " + secondCondition + ") && " + thirdCondition + ") {\n";
+                    this.lines.splice(firstStartIfIndex, 0, builder);
+                    if(this.countLeadingSpaces(conditionBody) >= 8) {
+                        conditionBody = conditionBody.substring(8);
+                    }
+                    this.lines.splice(firstStartIfIndex+1, 0, conditionBody);
+            
+                    builder = "";
+                    for(let i = 0; i < count; i++) {
+                        builder = builder + " ";
+                    }
+                    builder = builder + "}\n";
+                    this.lines.splice(firstStartIfIndex+2, 0, builder);
+                    this.nestedIfFound = true;
+                }
+            }
+
+            duplicateObject() {
+                let lineSize = this.lines.length;
+
+                let forPattern;
+                let objectPattern;
+                let loopCreationIndex;
+                let objectCreationIndex;
+                let fixedContent;
+                let count;
+            
+                let found = false;
+                // find for or while
+                for(let i = 0; i < lineSize; i++) {
+                    let line = this.lines[i];
+                    forPattern = new RegExp("\\b(?:for|while)\\s*\\(.*?\\)\\s*\\{");
+                    if (forPattern.test(line)) {
+                        console.log("loop detected: " + line);
+                        loopCreationIndex = i;
+                        break;
+                    }
+                }
+            
+                // find object creation
+                for(let i = loopCreationIndex; i < lineSize; i++) {
+                    let line = this.lines[i];
+            
+                    objectPattern = new RegExp("\\b[A-Z]\\w*\\s+[a-z]\\w*\\s*=\\s*new\\s+[A-Z]\\w*\\s*\\(\\s*\\)\\s*;");
+                    if (objectPattern.test(line)) {
+                        console.log("Object creation detected: " + line);
+                        objectCreationIndex = i;
+                        break;
+                    }
+                }
+            
+                if(loopCreationIndex != 0 && objectCreationIndex != 0 && loopCreationIndex < objectCreationIndex)
+                    found = true;
+            
+                // 수정
+                if(found) {
+                    this.lines[this.classStartIndex] = "public class Fixed {\n";
+                    fixedContent = this.lines[objectCreationIndex];
+                    count = this.countLeadingSpaces(fixedContent);
+                    console.log("Leading Space: " + count);
+                    if(count >= 4) {
+                        fixedContent = fixedContent.substring(4);
+                    }
+                    
+                    this.lines.splice(objectCreationIndex, 1);
+                    this.lines.splice(loopCreationIndex, 0, fixedContent);
+            
+                    for(let i = 0; i < this.lines.length; i++) {
+                        console.log(i + " : " + this.lines[i]);
+                    }
+                    this.duplicateObjectFound = true;
+                }
+            }
+
+            debuggingOutput() {
+                let buggyLines = [];
+                let lineSize = this.lines.length;
+                let debugOutputPattern;
+            
+                let found = false;
+            
+                for(let i = 0; i < lineSize; i++) {
+                    let line = this.lines[i];
+                    debugOutputPattern = new RegExp("\\bSystem.out.println\\(\"[^\"]*\"\\);");
+                    if (debugOutputPattern.test(line)) {
+                        console.log("Debug Output detected: " + line);
+                        buggyLines.push(i);
+                        found = true;
+                    }
+                }
+            
+                if(found) {
+                    for(let i = 0; i < buggyLines.length; i++) {
+                        let count = this.countLeadingSpaces(this.lines[buggyLines[i]]);
+                        this.lines[this.classStartIndex] = "public class Fixed {\n";
+                        this.lines[buggyLines[i]] = this.lines[buggyLines[i]].slice(0, count) + "//" + this.lines[buggyLines[i]].slice(count);
+                    }
+                    this.debuggingOutputFound = true;
+                }
+            }
+
+            findState(state, start) {
+                let line, startIfIndex = -1, endIfIndex, condition= "", conditionBody = "", tmp;
+                let lineSize = this.lines.length;
+                let pattern = new RegExp("\\((.*?)\\)");
+            
+                for(let i = start + 1; i < lineSize; i++) {
+                    line = this.lines[i];
+            
+                    if(line.includes(state)) {
+                        startIfIndex = i;
+            
+                        if(pattern.test(line)) {
+                            condition = pattern.exec(line)[1];
+                        }
+            
+                        for(let j = i + 1; j < lineSize; j++) {
+                            tmp = this.lines[j];
+                            if(tmp.includes("}")) {
+                                endIfIndex = j;
+                                break;
+                            }
+                            else {
+                                conditionBody = conditionBody + (this.lines[j] + "\n");
+                            }
+                        }
+                        break;
+                    }
+                }
+                let ifState = new this.IfState(startIfIndex, endIfIndex, condition, conditionBody);
+                return ifState;
+            }
+            
+            buildIndent(count) {
+                let builder = "";
+                for(let i = 0; i < count; i++) {
+                    builder = builder + " ";
+                }
+                return builder;
+            }
+            
+            useSwitch() {
+                let tmp;
+                let ifStates = []
+                let lineSize = this.lines.length;
+                let found = false;
+            
+                console.log("linesize: ", lineSize);
+            
+                tmp = this.findState("if", this.classStartIndex);
+                if(tmp.startIfIndex != -1) {
+                    ifStates.push(tmp);
+                    while(1) {
+                        tmp = this.findState("else", tmp.startIfIndex + 1);
+                        if(tmp.startIfIndex == -1) {
+                            break;
+                        }
+                        ifStates.push(tmp);
+                    }
+                }
+            
+                if(ifStates.length > 5) {
+                    found = true;
+                }
+            
+                if(found) {
+                    this.lines[this.classStartIndex] = "public class Fixed {\n";
+                    let firstStartIfIndex = ifStates[0].startIfIndex;
+                    let count = this.countLeadingSpaces(this.lines[firstStartIfIndex]);
+                    for(let i = firstStartIfIndex; i <= ifStates[ifStates.length - 1].endIfIndex; i++) {
+                        this.lines.splice(firstStartIfIndex, 1);
+                    }
+            
+                    let builder = this.buildIndent(count);
+            
+                    builder = builder + "switch(" + ifStates[0].condition.split(" ")[0] + ") {";
+                    this.lines.splice(firstStartIfIndex, 0, builder);
+            
+                    for(let i = 0; i < ifStates.length; i++) {
+                        if(i != ifStates.length - 1) {
+                            builder = this.buildIndent(count + 4);
+                            builder = builder + "case " + ifStates[i].condition.split(" ")[2] + ":";
+                            this.lines.splice(firstStartIfIndex + 1 + i * 3, 0, builder);
+                        }
+                        else {
+                            builder = this.buildIndent(count + 4);
+                            builder = builder + "default :";
+                            this.lines.splice(firstStartIfIndex + 1 + i * 3, 0, builder);
+                        }
+            
+                        let conditionBody = this.removeNewline(ifStates[i].conditionBody);
+                        builder = this.buildIndent(count + 8 - this.countLeadingSpaces(conditionBody));
+                        builder = builder + conditionBody + ";";
+                        this.lines.splice(firstStartIfIndex + 2 + i * 3, 0, builder);
+            
+                        builder = this.buildIndent(count + 8)
+                        builder = builder + "break;";
+                        this.lines.splice(firstStartIfIndex + 3 + i * 3, 0, builder);
+                    }
+            
+                    builder = this.buildIndent(count);
+                    builder = builder + "}\n";
+                    this.lines.splice(firstStartIfIndex + 1 + ifStates.length * 3, 0, builder);
+                }
+                this.useSwitchFound = true;
+            }
+        }
+
+        async function getOutput(code) {
+            const url = 'https://online-code-compiler.p.rapidapi.com/v1/';
+            const data = { 
+                language: 'java',
+                version: 'latest',
+                code: code,
+                input: null 
+            };
+
+            const response = await fetch(url, {
+                method: 'POST', // HTTP 메서드
+                headers: {
+                    'Content-Type' :'application/json',
+                    'x-rapidapi-key' : '397b183935mshe1a46aff9dce3bep1e5a00jsnd604c87d2da4',
+                    'x-rapidapi-host' : 'online-code-compiler.p.rapidapi.com',
+                },
+                body: JSON.stringify(data) // 데이터를 JSON 문자열로 변환하여 요청 본문에 포함
+            });
+
+            if (!response.ok) {
+                return null
+            }
+
+            const responseData = await response.json(); // JSON 응답을 파싱
+            return responseData; // 파싱된 데이터 반환
+
+            
+        }
+
+        function makeString(lines) {
+            str = "";
+            for(let i = 0; i < lines.length; i++) {
+                str = str + lines[i] + "\n";
+            }
+            return str;
+        }
+
+        refactored = ""
+        before_time = ""
+        before_mem = ""
+        after_time = ""
+        after_mem = ""
+        
+        before_CE = ""
+        after_CE = ""
+
+        // pattern num
+        pattern_num = ""
+
+        async function isvalid() {
+            // return true
+            //check code validity
+            console.log(editor.getValue());
+            console.log("============================");
+
+            const inputCode = editor.getValue();
+            let originData = await getOutput(inputCode);
+
+            if(originData == null) {
+                console.log('false')
+                return false;
+                
+            }
+
+            const before_code = editor.getValue();
+            const before_code_time = originData.cpuTime
+            const before_code_cpu = null
+            const before_code_mem = originData.memory
+
+            //============================================
+
+            if(before_code_mem == null) {
+                console.log('false')
+                return false;
+                
+            }
+
+            const lines = inputCode.split('\n');
+            let refactor = new Refactor(lines);
+            refactor.init();
+            refactor.duplicateFucntion("ArrayList", "size", "int");
+            refactor.nestedIf();
+            refactor.duplicateObject();
+            refactor.debuggingOutput(); 
+            refactor.useSwitch();
+
+            const refactoredCode = makeString(refactor.lines);
+            // console.log('Refactor Code : ', refactor.lines);
+            
+            let refactorData = await getOutput(refactoredCode);
+            console.log("============================");
+
+            let dpf = refactor.duplicateFucntionFound;
+            let nif = refactor.nestedIfFound;
+            let dpo = refactor.duplicateObjectFound;
+            let dbo = refactor.debuggingOutputFound;
+            let ust = refactor.useSwitchFound;
+
+            // console.log("Origin", originData);
+            // console.log("============================");
+            // console.log("Refactor", refactorData);
+            // console.log("============================");
+
+            //we use 4 patterns -> 0000 ~ 1111
+            // var pattern_num = {dpf, nif, dpo, ust}
+            pattern_num = {dpf,nif,dpo,ust}
+            var temp = ""
+            if(dpf){
+                temp+="1"
+            }
+            else{
+                temp+="0"
+            }
+            if(nif){
+                temp+="1"
+            }
+            else{
+                temp+="0"
+            }
+            if(dpo){
+                temp+="1"
+            }
+            else{
+                temp+="0"
+            }
+            if(ust){
+                temp+="1"
+            }
+            else{
+                temp+="0"
+            }
+            pattern_num = temp
+
+            
+            const after_code = refactoredCode
+            const after_code_time = refactorData.cpuTime
+            const after_code_cpu = null
+            const after_code_mem = refactorData.memory
+
+            refactored = refactoredCode
+            before_time = before_code_time
+            before_mem = before_code_mem
+            after_time = after_code_time
+            after_mem = after_code_mem
+
+
+            console.log(pattern_num,before_code,before_code_time,before_code_cpu,before_code_mem,after_code,after_code_time,after_code_cpu,after_code_mem)
+
+            insertCode(pattern_num,before_code,before_code_time,before_code_cpu,before_code_mem,after_code,after_code_time,after_code_cpu,after_code_mem)
+            
+            before_CE = calc_CE(before_time, before_mem)
+            after_CE = calc_CE(after_time, after_mem)
+            return true
+
+        }
+
+         // Function to update the resulted patterns
+         function updatePatterns(pattern_num) {
+            const patterns = ["P1", "P2", "P3", "P4"];
+            let detectedPatterns = [];
+
+            for (let i = 0; i < pattern_num.length; i++) {
+                if (pattern_num[i] === '1') {
+                    detectedPatterns.push(patterns[i]);
+                }
+            }
+
+            // Updating the HTML content
+            const resultElement = document.getElementById('resulted_pattern');
+            resultElement.innerHTML = 'Detected Pattern: ' + detectedPatterns.join(', ');
+        }
+        //Insert code 
+        
+        function insertCode(pattern_num,before_code,before_code_time,before_code_cpu,before_code_mem,after_code,after_code_time,after_code_cpu,after_code_mem){
+            $.ajax({
+                type: 'POST',  
+                url: '/insertcode',  
+                data: { user_id: userindex, pattern_num:pattern_num, before_code: before_code, before_code_time: before_code_time, before_code_cpu: before_code_cpu,before_code_mem: before_code_mem, after_code: after_code, after_code_time: after_code_time, after_code_cpu: after_code_cpu,after_code_mem: after_code_mem   },
+                contentType: 'application/x-www-form-urlencoded', 
+                success: function(response) {
+                    console.log('서버 응답:', response);
+                },
+                error: function(error) {
+                    console.error('에러 발생:', error);
+                }
+            });
+            update_stat(week)
+            updateDiary(week)
+        }
+        
+        //demo day = 0624
+        week = 3
+
+        $(document).ready(function() {
+
+            //Initialization
+            update_chart1(week)
+            update_chart2(week)
+            updateDiary(week)
+        
+
+            //Input code
+            $('.ic3_btn').click(async function () {
+                let v = await isvalid()
+                if(v){
+                    
+                    if(v){
+                        setTimeout(function() {
+
+                            $('#ic_init').fadeOut(400, function(){
+                                $("#ic_init").css("display", "none");
+                                $('#ic_res').fadeIn(400);
+                                set_before()
+                                set_after()
+                                updatePatterns(pattern_num);
+                                
+                            });
+
+
+
+                        }, 100); //5000 = 5secs
+                    }
+                
+
+                }
+                else{
+                    alert("Please input valid Java code!")
+                }
+                
+                
+            });
+            
+            $('#ic_res_buttons_back').click(function () {
+                $('#ic_res').fadeOut(400, function(){
+                    $('#ic_init').fadeIn(400);
+                });
+
+                setTimeout(function(){
+                    editor.setValue(" ")
+                },500)
+                
+
+
+            });
+
+            $('#ic_res_buttons_download').click(function () {
+                
+                code = refactored
+                const blob = new Blob([code], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Fixed.java';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+
+
+            //Calendar part
+            updateDiary(week)
+
+
+            $('#ca_sun_t1, #ca_mon_t1, #ca_tue_t1, #ca_wed_t1, #ca_thu_t1, #ca_fri_t1, #ca_sat_t1').click(function () {
+                canClickPrevNext = 0 
+                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(400, function(){
+                    $('#ca_detail_caremi').fadeIn(400);
+
+                    fetch('/getcodeData')
+                    .then(response => response.json())
+                    .then(data => {
+                        code_data = JSON.parse(data)
+
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+
+                });
+            });
+            $('#ca_sun_t1').click(function () {
+                DAY = 0
+                $('#ca_detail_caremi_t1').text('Sun ' + dateList[week][0].slice(2,4)+'. '+(parseInt(dateList[week][0][4])?dateList[week][0].slice(4,6):dateList[week][0].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][0].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                    else{
+                        setTimeout(function() {
+
+                            var bt = "Original Carbon Emission : " + "0"
+                            var at = "Reduced Carbon Emission : " + "0"
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue("");
+                            editor_after_cal.setValue("");
+
+                             
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+            $('#ca_mon_t1').click(function () {
+                DAY = 1
+                $('#ca_detail_caremi_t1').text('Mon ' + dateList[week][1].slice(2,4)+'. '+(parseInt(dateList[week][1][4])?dateList[week][1].slice(4,6):dateList[week][1].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][1].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+                        console.log(tempDate);
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                    else{
+                        setTimeout(function() {
+
+                            var bt = "Original Carbon Emission : " + "0"
+                            var at = "Reduced Carbon Emission : " + "0"
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue("");
+                            editor_after_cal.setValue("");
+
+                             
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+            $('#ca_tue_t1').click(function () {
+                DAY = 2
+                $('#ca_detail_caremi_t1').text('Tue ' + dateList[week][2].slice(2,4)+'. '+(parseInt(dateList[week][2][4])?dateList[week][2].slice(4,6):dateList[week][2].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][2].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+                        console.log(tempDate);
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                    else{
+                        setTimeout(function() {
+
+                            var bt = "Original Carbon Emission : " + "0"
+                            var at = "Reduced Carbon Emission : " + "0"
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue("");
+                            editor_after_cal.setValue("");
+
+                             
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+            $('#ca_wed_t1').click(function () {
+                DAY = 3
+                $('#ca_detail_caremi_t1').text('Wed ' + dateList[week][3].slice(2,4)+'. '+(parseInt(dateList[week][3][4])?dateList[week][3].slice(4,6):dateList[week][3].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][3].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+                        console.log(tempDate);
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                    else{
+                        setTimeout(function() {
+
+                            var bt = "Original Carbon Emission : " + "0"
+                            var at = "Reduced Carbon Emission : " + "0"
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue("");
+                            editor_after_cal.setValue("");
+
+                             
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+            $('#ca_thu_t1').click(function () {
+                DAY = 4
+                $('#ca_detail_caremi_t1').text('Thu ' + dateList[week][4].slice(2,4)+'. '+(parseInt(dateList[week][4][4])?dateList[week][4].slice(4,6):dateList[week][4].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][4].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                    else{
+                        setTimeout(function() {
+
+                            var bt = "Original Carbon Emission : " + "0"
+                            var at = "Reduced Carbon Emission : " + "0"
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue("");
+                            editor_after_cal.setValue("");
+
+                             
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+            $('#ca_fri_t1').click(function () {
+                DAY = 5
+                $('#ca_detail_caremi_t1').text('Fri ' + dateList[week][5].slice(2,4)+'. '+(parseInt(dateList[week][5][4])?dateList[week][5].slice(4,6):dateList[week][5].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][5].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+                        console.log(tempDate);
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                    else{
+                        setTimeout(function() {
+
+                            var bt = "Original Carbon Emission : " + "0"
+                            var at = "Reduced Carbon Emission : " + "0"
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue("");
+                            editor_after_cal.setValue("");
+
+                             
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+            $('#ca_sat_t1').click(function () {
+                DAY = 6
+                $('#ca_detail_caremi_t1').text('Sat ' + dateList[week][6].slice(2,4)+'. '+(parseInt(dateList[week][6][4])?dateList[week][6].slice(4,6):dateList[week][6].slice(5,6)));
+                date = String(dateList[week][6].slice(2, 4) + dateList[week][6].slice(4,6));
+                //console.log(date);
+                usersCode = new Array();
+                for (i = 0; i < code_data.length; i++) {
+                    if (code_data[i]['user_id'] == userindex + 1) {
+                        usersCode.push(code_data[i]);
+                    }
+                }
+                //console.log(usersCode);
+                if (usersCode.length) {
+                    temp = -1;
+                    for (i = 0; i < usersCode.length; i++) {
+                        tempDate = String(usersCode[i]['created_at'].slice(5, 7) + usersCode[i]['created_at'].slice(8, 10));
+                        console.log(tempDate);
+                        if (date == tempDate) {
+                           temp = usersCode[i];
+                        }
+                    }
+
+                    if (temp != -1) {
+                        setTimeout(function() {
+                            modified = 1;
+
+                            var bt = "Original Carbon Emission : " + calc_CE(temp['before_code_time'],temp['before_code_mem'])
+                            var at = "Reduced Carbon Emission : " + calc_CE(temp['after_code_time'],temp['after_code_mem'])
+                            
+                            $('#ca_res_before_CE').text(bt);
+
+                            $('#ca_res_after_CE').text(at);
+                            
+                            //change
+
+                            editor_before_cal.setValue(temp['before_code']);
+                            editor_after_cal.setValue(temp['after_code']);
+
+                            const codeDivs_b = editor_before_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_b.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+
+                            const codeDivs_a = editor_after_cal.getWrapperElement().querySelectorAll('.CodeMirror-code > div');
+
+
+                            if (codeDivs_a.length < 10) {
+                                const spans = document.querySelectorAll('.CodeMirror-code div span[role="presentation"]');
+                                spans.forEach(span => {
+                                    span.style.marginLeft = '30px';
+                                });
+                            }   
+                        }, 500); //5000 = 5secs
+                    }
+                }
+            });
+
+            $('#sun_edit, #mon_edit, #tue_edit, #wed_edit, #thu_edit, #fri_edit, #sat_edit').click(function () {
+                canClickPrevNext = 0 
+                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(400, function(){
+                    $('#ca_detail_wr').fadeIn(400);
+                });
+                $('#TC_textarea').val('');
+                $('#SC_textarea').val('');
+            });
+
+            $('#sun_edit').click(function () {
+                DAY = 0
+                $('#ca_detail_t1').text('Sun ' + dateList[week][0].slice(2,4)+'. '+(parseInt(dateList[week][0][4])?dateList[week][0].slice(4,6):dateList[week][0].slice(5,6)));
+            });
+            $('#mon_edit').click(function () {
+                DAY = 1
+                $('#ca_detail_t1').text('Mon ' + dateList[week][1].slice(2,4)+'. '+(parseInt(dateList[week][1][4])?dateList[week][1].slice(4,6):dateList[week][1].slice(5,6)));
+            });
+            $('#tue_edit').click(function () {
+                DAY = 2
+                $('#ca_detail_t1').text('Tue ' + dateList[week][2].slice(2,4)+'. '+(parseInt(dateList[week][2][4])?dateList[week][2].slice(4,6):dateList[week][2].slice(5,6)));
+            });
+            $('#wed_edit').click(function () {
+                DAY = 3
+                $('#ca_detail_t1').text('Wed ' + dateList[week][3].slice(2,4)+'. '+(parseInt(dateList[week][3][4])?dateList[week][3].slice(4,6):dateList[week][3].slice(5,6)));
+            });
+            $('#thu_edit').click(function () {
+                DAY = 4
+                $('#ca_detail_t1').text('Thu ' + dateList[week][4].slice(2,4)+'. '+(parseInt(dateList[week][4][4])?dateList[week][4].slice(4,6):dateList[week][4].slice(5,6)));
+            });
+            $('#fri_edit').click(function () {
+                DAY = 5
+                $('#ca_detail_t1').text('Fri ' + dateList[week][5].slice(2,4)+'. '+(parseInt(dateList[week][5][4])?dateList[week][5].slice(4,6):dateList[week][5].slice(5,6)));
+            });
+            $('#sat_edit').click(function () {
+                DAY = 6
+                $('#ca_detail_t1').text('Sat ' + dateList[week][6].slice(2,4)+'. '+(parseInt(dateList[week][6][4])?dateList[week][6].slice(4,6):dateList[week][6].slice(5,6)));
+            });
+
+            $('#detail_caremi_cancel').click(function () {
+                canClickPrevNext = 1
+                $('#ca_detail_caremi').fadeOut(400, function(){
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
+                    $('#detail_caremi_code_before').text('No code input existed this day.');
+                    $('#detail_caremi_before').text(' ');
+                    $('#detail_caremi_code_after').text(' ');
+                    $('#detail_caremi_after').text(' ');
+                });
+            });
+
+            $('#detail_cancel').click(function () {
+                canClickPrevNext = 1
+                $('#ca_detail_wr').fadeOut(400, function(){
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
+                });
+            });
+
+            $('#detail_update').click(function () {
+
+                //DB insertion
+                var day = $('#ca_detail_t1').text()
+                insertUserCalendar(week, Newdate)
+
+                canClickPrevNext = 1
+                
+                setTimeout(function() {
+                    updateDiary(week)
+                }, 300)
+
+                
+                $('#ca_detail_wr').fadeOut(400, function(){
+                    updateDiary(week)
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
+                });
+            });
+
+
+            var canClickPrevNext = 1
+
+            var Newdate = new Date('2024-06-22');
+
+            var Dateinfo = [['June','2024','1st'],
+                            ['June','2024','2nd'],
+                            ['June','2024','3rd'],
+                            ['June','2024','4th'],
+                            ['July','2024','1st'],
+                            ['July','2024','2nd'],
+                            ['July','2024','3rd'],
+                            ['July','2024','4th'],
+                            ['August','2024','1st']]
+
+            $('#prev_w').click(function (){
+                if(!canClickPrevNext){
+                    return
+                }
+                if(week == 0){
+                    return
+                }
+
+                var days_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(1, function(){
+                    $('#ca_sun_t1').html('Sun ' + (parseInt(Newdate.getDate()+0)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+0)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_mon_t1').html('Mon ' + (parseInt(Newdate.getDate()+1)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+1)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_tue_t1').html('Tue ' + (parseInt(Newdate.getDate()+2)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+2)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_wed_t1').html('Wed ' + (parseInt(Newdate.getDate()+3)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+3)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_thu_t1').html('Thu ' + (parseInt(Newdate.getDate()+4)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+4)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_fri_t1').html('Fri ' + (parseInt(Newdate.getDate()+5)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+5)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_sat_t1').html('Sat ' + (parseInt(Newdate.getDate()+6)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+6)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(1);
+                });
+
+                week -= 1;
+
+                $('#ca_mo').html('&nbsp;'+Dateinfo[week][0]);
+                $('#ca_yr').html('&nbsp;'+Dateinfo[week][1]);
+                $('#ca_we').html('&nbsp;'+Dateinfo[week][2]);
+
+                
+                Newdate.setDate(Newdate.getDate() - 7);
+                
+                
+                updateDiary(week)
+                
+
+            });
+
+            $('#next_w').click(function (){
+                if(!canClickPrevNext){
+                    return
+                }
+                if(week == 8){
+                    return
+                }
+                var days_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(1, function(){
+                    $('#ca_sun_t1').html('Sun ' + (parseInt(Newdate.getDate()+0)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+0)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_mon_t1').html('Mon ' + (parseInt(Newdate.getDate()+1)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+1)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_tue_t1').html('Tue ' + (parseInt(Newdate.getDate()+2)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+2)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_wed_t1').html('Wed ' + (parseInt(Newdate.getDate()+3)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+3)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_thu_t1').html('Thu ' + (parseInt(Newdate.getDate()+4)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+4)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_fri_t1').html('Fri ' + (parseInt(Newdate.getDate()+5)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+5)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_sat_t1').html('Sat ' + (parseInt(Newdate.getDate()+6)>=days_month[parseInt(Newdate.getMonth())] ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+6)%days_month[parseInt(Newdate.getMonth())]+1));
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(1);
+                });
+
+                week += 1;
+                console.log(week)
+                $('#ca_mo').html('&nbsp;'+Dateinfo[week][0]);
+                $('#ca_yr').html('&nbsp;'+Dateinfo[week][1]);
+                $('#ca_we').html('&nbsp;'+Dateinfo[week][2]);
+
+              
+                Newdate.setDate(Newdate.getDate() + 7);
+
+                updateDiary(week)
+
+                
+                
+            });
+
+
+
+
+            $("#ov_wpr").css("display", "block");
+            $("#ca_wpr").css("display", "none");
+            $("#ic_wpr").css("display", "none");
+            $("#st_wpr").css("display", "none");
+            $("#co_wpr").css("display", "none");
+            $("#pi_wpr").css("display", "none");
+            $("#btn_ov").css("background-color",'#79D96A35');
+
+
+            
+            $("#btn_ov").click(function() {
+                $("#ov_wpr").css("display", "block");
+                $("#ca_wpr").css("display", "none");
+                $("#ic_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
+                $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
+                $(this).css("background-color",'#79D96A35');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_ic").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
+
+                update_chart1(week)
+                update_chart2(week)
+            });
+            $("#btn_cal").click(function() {
+                $("#ov_wpr").css("display", "none");
+                $("#ca_wpr").css("display", "block");
+                $("#ic_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
+                $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $(this).css("background-color",'#79D96A35');
+                $("#btn_ic").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
+                setTimeout(function() {
+                    updateDiary(week)
+                }, 300)
+            });
+            $("#btn_ic").click(function() {
+                $("#ov_wpr").css("display", "none");
+                $("#ca_wpr").css("display", "none");
+                $("#ic_wpr").css("display", "block");
+                $("#st_wpr").css("display", "none");
+                $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_ic").css("background-color",'#79D96A35');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
+            });
+            $("#btn_st").click(function() {
+
+                
+                $("#ov_wpr").css("display", "none");
+                $("#ca_wpr").css("display", "none");
+                $("#ic_wpr").css("display", "none");
+                $("#st_wpr").css("display", "block");
+                $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_ic").css("background-color",'');
+                $("#btn_st").css("background-color",'#79D96A35');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
+
+                setTimeout(function() {
+                    update_stat(week)
+                }, 300)
+
+            });
+            $("#btn_co").click(function() {
+                $("#ov_wpr").css("display", "none");
+                $("#ca_wpr").css("display", "none");
+                $("#ic_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
+                $("#co_wpr").css("display", "block");
+                $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_ic").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'#79D96A35');
+                $("#btn_pi").css("background-color",'');
+            });
+            $("#btn_pi").click(function() {
+                $("#ov_wpr").css("display", "none");
+                $("#ca_wpr").css("display", "none");
+                $("#ic_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
+                $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "block");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_ic").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'#79D96A35');
+                setTimeout(function() {
+                    updateInfo()
+                    updateTier();
+                }, 200)
+            });
+
+
+            $('.ov3_stat').hide();
+            $('#ov3_1_t1').hide();
+            $('#ov3_1_t2').hide();
+            $('#ov3_1_t3').hide();
+            $('#ov3_1_t4').hide();
+
+            var title_elements = ['#ov3_1_t1', '#ov3_1_t2','#ov3_1_t3','#ov3_1_t4'];
+            var elements = ['#ov3_2', '#ov3_3','#ov3_4','#ov3_5'];
+            var randomIndex = 0;
+            $(title_elements[randomIndex]).show();
+            $(elements[randomIndex]).show();
+
+
+            
+            
+
+            // statistics part
+            
+            // exampledata
+            var usrDataList = [
+                '3\n4.4',
+                '4\n5',
+                '2\n5',
+                '3\n4',
+                '4\n5',
+                '2\n5',
+                '3\n4'
+            ];
+
+            var ptnDataList = [
+                '3\n4',
+                '4\n5',
+                '2.7\n3',
+                '1.9\n1.1',
+            ];
+
+            // from datapoint to dataset
+            var datasets = [];
+            for (var i = 0; i < 2; i++) {
+                datasets.push(usrDataList.map(function(data) {
+                    return parseFloat(data.split('\n')[i], 10);
+                }));
+            }
+            var datasets2 = [];
+            for (var i = 0; i < 2; i++) {
+                datasets2.push(ptnDataList.map(function(data) {
+                    return parseFloat(data.split('\n')[i], 10);
+                }));
+            }
+            var labelList = [
+                'You',
+                'Entire Users'
+            ]
+
+            // Make Chart
+            // console.log(datasets)
+            STAT = new Chart($('#chart1'), {
+                type: 'line',
+                data: {
+                    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+                    datasets: [{
+                        label: labelList[0],
+                        data: datasets[0],
+                        backgroundColor: '#79D96A33',
+                        borderColor: '#79D96A',
+                        borderWidth: 1
+                    },
+                    {
+                        label: labelList[1],
+                        data: datasets[1],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            grid:{
+                                color:'rgba(255,255,255,0.2)'
+                            }
+                        }
+                    },
+                    plugins:{
+                        legend: {
+                            position:'bottom',
+                            labels: {
+                                padding: 20, // control padding between legends
+                                font: {
+                                    size: 14
+                                },
+                                color:'rgba(255,255,255)'
+                            }
+                        },title: {
+                            display: true,
+                            text: 'Daily Green Commitments',
+                            color: 'rgba(255, 255, 255)',
+                            font:{
+                                size: 20
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            bottom:20
+                        }
+                    }
+                }
+            });
+            STAT2 = new Chart($('#chart2'), {
+                type: 'radar',
+                data: {
+                    labels: ['P1', 'P2', 'P3', 'P4'],
+                    datasets: [{
+                        label: labelList[0],
+                        data: datasets2[0],
+                        backgroundColor: '#79D96A33',
+                        borderColor: '#79D96A',
+                        borderWidth: 1
+                    },
+                    {
+                        label: labelList[1],
+                        data: datasets2[1],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                ]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            min: 0,              
+                            max: 5,             
+                            ticks: {
+                                stepSize: 1,     // 레이블 간격 설정
+                                maxTicksLimit: 6 // 레이블 갯수 고정 (0, 1, 2, 3, 4, 5)
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.2)'
+                            }
+                        }
+                    },
+                    plugins:{
+                        legend: {
+                            position:'bottom',
+                            labels: {
+                                padding: 20, // control padding between legends
+                                font: {
+                                    size: 14
+                                },
+                                color:'rgba(255,255,255)'
+                            },title: {
+                                display: true,
+                                text: 'Commitments Per Green Patterns',
+                                color: 'rgba(255, 255, 255)',
+                                font:{
+                                    size: 20
+                                },
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            bottom:20
+                        }
+                    }
+                }
+            });
+            
+            update_stat(week,STAT,STAT2)
+
+            //contact part
+
+            $('#send_feedback').click(function() {
+                // Get the value from the textarea
+                var comment = $('#FB_textarea').val();
+
+                // Print the comment to the console
+                console.log(comment);
+
+                $.ajax({
+                    type: 'POST',  
+                    url: '/suggestion',  
+                    data: { userindex : userindex, suggestions : comment },
+                    contentType: 'application/x-www-form-urlencoded', 
+                    success: function(response) {
+                        console.log('서버 응답:', response);
+                    },
+                    error: function(error) {
+                        console.error('에러 발생:', error);
+                    }
+                });
+
+                // Clear the textarea
+                $('#FB_textarea').val('');
+
+                alert("Thank you for your valuable comments.")
+            });
+
+            //PI
+            $('#submitBtn_edit').click(function() {
+                $('.pi-container-2').show();
+            });
+
+            $('#submitBtn_now').click(function() {
+                // Get the values from the text inputs
+                $('.pi-container-2').hide();
+                var value1 = $('#job2').val();
+                var value2 = $('#age2').val();
+                var value3 = $('input[name="gender2"]:checked').val();
+
+                // Log the values to the console
+                console.log('Input 1:', value1);
+                console.log('Input 2:', value2);
+                console.log('Input 3:', value3);
+
+
+                // Clear the text inputs
+                $('#job2').val('');
+                $('#age2').val('');
+                $('input[name="gender2"]').prop('checked', false);
+                
+                $('#job').text('JOB: ' + value1);
+                $('#age').text('AGE: ' + value2);
+                $('#gender').text('GENDER: ' + value3);
+                $.ajax({
+                    type: 'POST',  
+                    url: '/info',  
+                    data: { userindex: userindex, job: value1, age: value2, gender: value3 },
+                    contentType: 'application/x-www-form-urlencoded', 
+                    success: function(response) {
+                        console.log('서버 응답:', response);
+                    },
+                    error: function(error) {
+                        //console.error('에러 발생:', error);
+                    }
+                });
+
+                
+            });
+
+            
+
+        });
+
+
+    </script>
+
+</body>
+</html>
+        

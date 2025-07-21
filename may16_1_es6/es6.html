@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            var a = 10; // a라는 변수를 만들고, 거기다 10 넣어라
+            a = 20;     // 이미 있는 변수 a를 20으로 바꿔라
+            for (var i = 0; i < 5; i++) {
+                var b = 30; // 반복문 속에서 변수 만드는 거 자제
+                            // (Python은 저런 거에 관심이 없는 언어)
+            }
+            
+            // 고급 언어가 작업은 쉬울 수도 있겠는데, 혼란이 -> 저급언어쪽으로 발전
+            /////////////////////////
+            var c = 10; // c라는 변수를 만들고, 거기다 10 넣어라
+            function test() {
+                alert(c); // 15번줄에 있는 c에 접근 가능하니 -> 10
+                var c = 20; // c라는 변수를 만들고, 거기다 20 넣어라
+                            // -> 같은 이름으로 변수를 또 만드나? -> 안 돼야 정상
+                            // -> JS는 고급언어니까 허용해줌 -> 혼란
+                alert(c);
+            }
+            /////////////////////////
+            // 변수 만들 때
+            //      기존 var가 혼란스러움
+            //      let(변수)
+            //      const(상수)
+            let d = 10;
+            // let d = 20;
+            function test2() {
+                alert(d);
+                // let d = 20; // 같은 이름으로 변수 또 만들기 불가
+                // alert(d);
+                const e = 100;
+                // e = 200; // 수정 불가
+                alert(e);
+            }
+            test2();
+            /////////////////////////
+            let f = 10;
+            let g = "10";
+            alert(f == g); // 고급언어 -> 자료형 알아서 대충 센스있게 처리
+            alert(f === g); // 자료형까지 따지는 같냐 연산자
+            alert(f !== g);
+            /////////////////////////
+            // JS 특유의 콜백함수 시스템 -> 함수명 안 써도 됨 -> 화살표함수
+            // navigator.geolocation.getCurrentPosition(function(h) {
+            //     alert(JSON.stringify(h));
+            // });
+            // 화살표함수(arrow function) : anfn
+            // (파1, 파2, ...) => {}
+            navigator.geolocation.getCurrentPosition((h) => {
+                alert(JSON.stringify(h));
+            });
+            /////////////////////////
+            // 일반함수도 화살표함수로 표현하고, 변수에 저장해서 사용 : nfn
+            // function printHab(i, j) {
+            //     alert(i + j);
+            // }
+            const printHab = (i, j) => {
+                alert(i + j);
+            }
+            printHab(1000, 2000);
+            /////////////////////////
+            // 화살표함수
+            //      (p1, p2, ...) => {내용}
+            //      (p1, p2, ...) => 내용 => 리턴됨
+            const getHab = (k, l) => k + l;
+            let m = getHab(3000, 4000);
+            alert(m);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

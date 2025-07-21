@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ㅋ</title>
+</head>
+
+<body>
+    <!--
+        이미지 사이즈 조절
+            1) 안 해야, 그 사이즈의 이미지를 구하는 게 맞음
+            2) 어쩔 수 없이 해야 할 때 - css
+        
+        사이즈
+            100 : 100px
+            100px : 100px
+            100% : 부모 사이즈의 상대 사이즈
+            가로든 세로든 둘 중 하나만 조절하면 나머지 하나는 비율따라 알아서 조절
+    -->
+    <!--
+        경로
+            절대경로 : C:\ljw\workspace\Web\Apr15_1_HTML\새.png
+                이걸 서버에서 실행할 건데, 서버에 저런 경로는 없음
+                -> 활용도가 낮음
+            상대경로 : 지금 작업중인 이 html 기준으로
+                이 프로젝트 통째로 서버로 보내서 실행할 거
+                . : 현재 위치
+                .. : 한 단계 상위
+    -->
+    <!-- 
+        HTML 4.01 : add-on이 필요(flash, active-x, ...)
+        HTML 5 : add-on 없이 html만으로 구현
+    -->
+    <img src="C:\ljw\workspace\Web\Apr15_1_HTML\hhhh\새.png" width="200">
+    <img src="새.png" width="200">
+    <img src="iiii/Apple64.png" width="200">
+    <img src="../i2222/pa.gif" width="200">
+    <!--
+        HTML 4.01때 까지는 img 말고 다른 거는 embed로(add-on이 필요할 수도)
+        HTML 5에서 멀티미디어 관련된 것들 추가
+            됐는데, 브라우저마다 지원하는 게 달라서 안 될 수도
+            됐는데, HTML5를 주력으로 써도 되나?(IE)
+    -->
+    <audio src="Cheetahmen2.mp3" controls></audio>
+    <video src="spring.mp4" controls></video>
+    <embed src="Bluetooth.pdf">
+
+
+</body>
+
+</html>

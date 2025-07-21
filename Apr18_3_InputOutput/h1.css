@@ -1,0 +1,51 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: cornsilk;
+    box-shadow: 3px 3px 3px black;
+    width: 400px;
+    padding: 10px;
+}
+.texttype, .selectType {
+    width: 300px;
+    height: 35px;
+    background-color: transparent;
+    font-size: 14pt;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.selectType:hover {
+    background-color: tan;
+}
+.texttype::placeholder {
+    color: burlywood;
+}
+th {
+    font-size: 30pt;
+    height: 80px;
+}
+.td1 {
+    padding: 10px;
+    width: 50px;
+    height: 30px;
+    font-size: 15pt;
+}
+button {
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 14pt;
+    background-color: tan;
+}
+button:hover {
+    background-color: #a2945c;
+}
+.taType {
+    resize: none; /* textarea 사용자가 사이즈 조절 못 하게*/
+    width: 300px;
+    height: 150px;
+    font-size: 15pt;
+    border: black solid 2px;
+    background-color: transparent;
+}

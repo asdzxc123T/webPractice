@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                $("#b1").click(function() {
+                    // $("a").text("<b>ㅋㅋㅋ</b>");
+                    $("a").html("<b>ㅋㅋㅋ</b>");
+                });
+                $("#b2").click(function() {
+                    alert($("a").text());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <a href="https://www.naver.com">네이버로</a>
+        <hr>
+        <button id="b1">수정</button>
+        <button id="b2">확인</button>
+    </body>
+</html>

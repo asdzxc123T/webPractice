@@ -1,0 +1,18 @@
+.anImg {
+    background-color: white;
+    box-shadow: 3px 3px 3px black;
+    /* 공간이 비어있을 때 옆으로 보내기 */
+    float: left;
+    margin: 10px;
+}
+.anImg .imgTd {
+    height: 220px;
+    padding: 10px;
+}
+.anImg .imgTd img {
+    max-height: 200px;
+}
+.anImg .dateTd {
+    font-size: 8pt;
+    padding: 5px;
+}

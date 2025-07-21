@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  password  String
+  profile   String?
+  theme     String   @default("light")
+  font      String   @default("default")
+  notes     Note[]   @relation("UserNotes")
+}
+
+model Note {
+  id        Int       @id @default(autoincrement())
+  title     String
+  createdAt DateTime  @default(now())
+  pinned    Boolean   @default(false)
+  contents  Content[] @relation("NoteContents")
+  comments  Comment[] @relation("NoteComments")
+  userId    Int
+  user      User      @relation("UserNotes", fields: [userId], references: [id])
+}
+
+model Content {
+  id        Int      @id
+  type      String
+  value     String
+  noteId    Int
+  note      Note     @relation("NoteContents", fields: [noteId], references: [id])
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime @default(now())
+  noteId    Int
+  note      Note     @relation("NoteComments", fields: [noteId], references: [id])
+}

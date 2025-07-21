@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                var paper = document.getElementById("c");
+                var pen = paper.getContext("2d");
+
+                pen.fillRect(10, 20, 100, 50); // x, y, w, h
+                pen.fillStyle = "red";
+                pen.fillRect(110, 70, 50, 30);
+
+                $("#c").mouseup(function(e) {
+                    pen.fillRect(e.pageX - 20, e.pageY - 20, 30, 30)
+                });
+            });
+        </script>
+        <style>
+            canvas {
+                border: black solid 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="c" width="300px" height="300px"></canvas>
+    </body>
+</html>

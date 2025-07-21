@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!--
+            form : 편함
+                form 속에 있는 button, submit타입 input, image타입 input을 누르면
+                form 속에 있는 input
+                    name을 reqParam변수명으로
+                    내용을 전기신호로 바꿔서(인코딩해서)    
+                action에 써놓은쪽으로 요청해줌
+            
+            파일 업로드
+            1) reqParam이 주소에 실려가는 GET방식은 파일 표현 불가 -> POST방식이어야
+            2) 기존 인코딩 방식은 글자는 인코딩 가능한데, 파일이 인코딩 불가
+            -> 인코딩 방식을 바꿔야
+
+            
+        -->
+        <form action="http://localhost:5678/file.up" method="post" enctype="multipart/form-data">
+            제목 : <input name="title"><p>
+            사진 : <input name="photo" type="file"><p>
+            <button>ㄱㄱ</button>
+        </form>
+    </body>
+</html>

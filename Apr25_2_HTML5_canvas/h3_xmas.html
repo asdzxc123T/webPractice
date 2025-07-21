@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                var paper = document.getElementById("c");
+                var pen = paper.getContext("2d");
+
+                setInterval(function() {
+                    pen.save();
+                    pen.fillStyle = "#00000022";
+                    pen.fillRect(0, 0, 300, 300);
+
+                    // red, #FF0000, rgb(255, 0, 0)
+                    var x = Math.random() * 300;
+                    var y = Math.random() * 300;
+                    var r = Math.random() * 255;
+                    var g = Math.random() * 255;
+                    var b = Math.random() * 255;
+                    pen.shadowOffsetX = 0;
+                    pen.shadowOffsetY = 0;
+                    pen.shadowBlur = 10;
+                    pen.shadowColor = "yellow";
+                    pen.fillStyle = "rgb(" + r + ", " + g + ", " + b + ")";
+                    pen.fillRect(x, y, 10, 10);
+
+                    pen.restore();
+                }, 30);
+            });
+        </script>
+        <style>
+            canvas {
+                border: black solid 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="c" width="300px" height="300px"></canvas>
+    </body>
+</html>

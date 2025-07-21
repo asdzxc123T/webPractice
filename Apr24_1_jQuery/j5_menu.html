@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                $("#menu").click(function() {
+                    if ($("table").css("top") == "-30px")
+                        $("table").css("top", "10px");
+                    else
+                        $("table").css("top", "-30px");
+                });
+            });
+        </script>
+        <style>
+            table {
+                position: fixed;
+                top: -30px;
+                transition: all 0.3s ease-in;
+            }
+            #menu:hover {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>
+                    <a href="https://www.naver.com">네이버로</a>
+                </td>
+                <td>
+                    <a href="https://www.google.com">구글로</a>
+                </td>
+                <td>
+                    <a href="https://www.daum.net">다음으로</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center" id="menu">이거</td>
+            </tr>
+        </table>
+    </body>
+</html>

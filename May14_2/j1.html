@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://localhost:5678/socket.io/socket.io.js"></script>
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                var socket = io.connect("http://localhost:5678");
+                var url = "http://localhost:8888/may14.get.all";
+                $.getJSON(url, function(result) {
+                    $.each(result, function(i, m) {
+                        $("table").append($("<tr></tr>").append($("<td></td>").append(m.name, "-", m.price)));
+                    });
+                });
+                $("button").click(function() {
+                    var name = $("#name").val();
+                    var price = $("#price").val();
+                    $("#name").val("");
+                    $("#price").val("");
+                    var url = "http://localhost:8888/may14.reg?name=" + name + "&price=" + price;
+                    $.getJSON(url, function(result) {
+                        if (result.result)
+                            socket.emit("updateTable", {"name" : name, "price" : price});
+                    });
+                });
+                socket.on("updateTableConfirm", function(x) {
+                    $("table").empty();
+                    var url = "http://localhost:8888/may14.get.all";
+                    $.getJSON(url, function(result) {
+                        $.each(result, function(i, m) {
+                            $("table").append($("<tr></tr>").append($("<td></td>").append(m.name, "-", m.price)));
+                        });
+                    });
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <!-- 
+            클래식 - ?
+                일반요청기반 -> 동기식(서버의 응답 올 때까지 멈춤) -> 응답없음 발생
+                Back-end쪽에서 데이터 처리해서 HTML까지 만들어줌 -> Back-end가 할 일 증가
+                HTML페이지 전환이 무조건 생김
+
+            신형 - ?
+                AJAX 기반 -> 비동기식(서버의 응답 올 때까지 안 멈추는) -> 타이밍 조절 힘듦
+                Back-end쪽에서 데이터만 응답해줌
+                HTML페이지 전환이 안 생길 수도 -> 실시간처리
+                SPA(Single Page Application)
+        -->
+        이름: <input id="name"><br>
+        가격: <input id="price"><br>
+        <button>등록</button>
+        <hr>
+        <table border="1"></table>
+    </body>
+</html>

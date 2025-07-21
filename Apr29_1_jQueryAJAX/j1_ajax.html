@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                // JavaScript + DB : 직접 연결은 없음
+                // XML/JSON 파싱을 통해서 간접적으로 가능
+                
+                // XML : JavaScript가 쓰기 위한 시스템
+                
+                // Asynchronous
+                // JavaScript
+                // And
+                // Xml
+                //  : 비동기식 통신을 통해서 JavaScript로 XML 파싱
+                //  : 브라우저의 동일출처정책
+                //      -> 내 서버의 것만 받아올 수 있고 -> 클래식 웹이라면
+                //      -> 남의 서버에 있는 건 브라우저가 안 받아줌
+
+                $.ajax({
+                    // url: "주소(요청파라메터부분 빼고)",
+                    // data : {"변수명":값, "변수명":값, ...},
+                    // success : function(받아온 거) {
+                    // }
+                    url : "https://www.kma.go.kr/repositary/xml/fct/mon/img/fct_mon1rss_108_20250424.xml",
+                    success : function(asd) {
+                        alert(asd);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://localhost:5678/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function() {
+                var socket = io.connect("http://localhost:5678");
+                var paper = document.getElementById("c");
+                var pen = paper.getContext("2d");
+                var drawing = false;
+                var beginX = -1;
+                var beginY = -1;
+                $("#c").mousemove(function(e) {
+                    if (drawing) {
+                        var endX = e.pageX - 8;
+                        var endY = e.pageY - 8;
+                        socket.emit("drawInfo", {"strokeStyle" : $("#colorInput").val(), "beginX" : beginX, "beginY" : beginY, "endX" : endX, "endY" : endY});
+                    }
+                });
+                $("#c").mousedown(function(e) {
+                    if (e.button == 0) {
+                        drawing = true;
+                        beginX = e.pageX - 8;
+                        beginY = e.pageY - 8;
+                    }
+                });
+                $("html").mouseup(function() {
+                    drawing = false;
+                });
+                socket.on("drawInfo2", function(xy) {
+                    pen.strokeStyle = xy.strokeStyle
+                    pen.beginPath();
+                    pen.moveTo(xy.beginX, xy.beginY);
+                    pen.lineTo(xy.endX, xy.endY);
+                    pen.closePath();
+                    pen.stroke();
+                    beginX = xy.endX;
+                    beginY = xy.endY;
+                });
+            });
+        </script>
+        <style>
+            canvas {
+                border: black solid 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="c" width="800px" height="600px"></canvas>
+        <input id="colorInput" value="#000000">
+    </body>
+</html>

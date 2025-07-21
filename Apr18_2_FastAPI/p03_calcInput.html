@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <a href="http://195.168.9.169:5678/calculate.do?xxx=10&yyy=5">
+            10이랑 5 계산하기
+        </a>
+        <hr>
+        <!--
+            form + button
+                form 속의 button 누르면
+                    input에 쓴 거를 reqParam으로 만들어서(name이 변수명, 입력한 게 값)
+                    action에 있는 쪽으로 요청을 날려줌
+        -->
+        <form action="http://localhost:5678/calculate.do">
+            x : <input name="xxx"><br>
+            y : <input name="yyy"><br>
+            <button>ㄱㄱ</button>
+        </form>
+        <hr>
+        <form action="http://localhost:5678/gugudan.show" method="post">
+            start : <input name="start"><br>
+            end : <input name="end"><br>
+            <button>ㄱㄱ</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+Node.js + React 프로젝트(Front-end)
+
+React : 그래봐야 js인데, jQuery처럼 기존 html에 넣어서 써도 되는데 대부분 Node.js 환경에 돌리더라
+        -> Node.js에 있는 이런저런 툴들이 express처럼 React 프로젝트 만들고 세팅하고 해주니 그런가 봄
+        -> 이런저런 툴 중에 yarn을 선택
+
+yarn create react-app 프로젝트명 (프로젝트 만들기)
+cd 프로젝트명 (그 폴더 들어가서)
+yarn add socket.io-client@2 (websocket클라이언트 lib 설치)
+yarn start (Node.js 서버에 올려서 실행)
+
+-------------------------------------------------------------
+Node.js WebSocket 서버(Back-end)
+
+Node.js : FastAPI 포지션(기본적으로 websocket 기능 없음)
+프로젝트 만들고, 세팅하고 해야 하는데
+express가 프로젝트 만들고 세팅하고
+
+express 프로젝트명 (프로젝트 만들기)
+cd 프로젝트명 (그 폴더 들어가서)
+npm install (express에서 기본적으로 필요한 lib 설치)
+npm install socket.io@2 (websocket 관련 lib 설치)
+nodemon app.js (자동재시작 되는 모드로 실행)
+
+-------------------------------------------------------------
+개발 끝난 React 프로젝트 배포
+그 프로젝트로 가서 cmd
+        yarn build
+build 폴더가 생김
+        -> 단독 html 실행 x
+        -> 어떤 서버든 간에 업로드

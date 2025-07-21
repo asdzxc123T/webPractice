@@ -1,0 +1,83 @@
+<!-- 
+    1) 기획
+    2) 기능 - 등록, 수정, 조회, 삭제
+    3) DB 디자인
+    4) 화면 설계 -> 구현
+    5) FE-BE데이터 주고받 설계 -> 구현
+        형식
+        기술
+        주소
+        포트
+        -> protocol(통신규약)
+        5-1) 버튼 클릭 때 입력한 거 확인
+        5-2) Back-end 쪽으로 전송해서 확인
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <script src="may072_jQuery.js"></script>
+        <style>
+            #coverPage img {
+                margin-top: 80px;
+                width: 60%;
+            }
+            #coverPageContentArea {
+                text-align: center;
+            }
+            .page {
+                margin-right: 3px;
+                margin-left: 3px;
+            }
+            .page:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div data-role="page" id="coverPage">
+            <div data-role="header" data-position="fixed">
+                <h1>Cover Page</h1>
+            </div>
+            <div data-role="content" id="coverPageContentArea">
+                <a href="#mainPage">
+                    <img src="android_normal.png">
+                </a>
+            </div>
+        </div>
+
+        <div data-role="page" id="mainPage">
+            <div data-role="header" data-position="fixed">
+                <a href="#coverPage" data-icon="arrow-l">Back</a>
+                <h1>Main Page</h1>
+            </div>
+            <div data-role="content" id="contentArea">
+                <input id="color" placeholder="color">
+                <input id="status" placeholder="status">
+                <button>등록</button>
+                <hr>
+                <input id="search" placeholder="search">
+                <ul id="machines" data-role="listview" data-inset="true">
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="page" id="detailPage">
+            <div data-role="header" data-position="fixed">
+                <a href="#mainPage" data-icon="arrow-l">Back</a>
+                <h1>Detail Page</h1>
+            </div>
+            <div data-role="content" id="detailContentArea">
+                <ul id="detailContentAreaUl" data-role="listview" data-inset="true">
+                    
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

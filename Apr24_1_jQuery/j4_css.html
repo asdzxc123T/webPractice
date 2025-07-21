@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                // CSS 수정 가능 : JS를 쓰는 큰 이유 중 하나
+                //      $(선택자).css("속성명", "값");
+                // CSS 추가
+                $("#b1").click(function() {
+                    $("h1").css("color", "blue");
+                });
+
+                $("#b2").click(function() {
+                    if ($("h1").css("color") == "rgb(255, 0, 0)")
+                        $("h1").css("color", "green");
+                    else
+                        $("h1").css("color", "red");
+                })
+
+                $("#b3").click(function() {
+                    // $("h1").css("color", "orange");
+                    // $("h1").css("background-color", "gray");
+                    $("h1").css("color", "orange").css("background-color", "gray");
+                })
+
+                $("#b4").click(function() {
+                    alert($("h1").css("color"));
+                });
+                
+                var t;
+                $("#b5").click(function() {
+                    // setTimeout(콜백함수, 시간(밀리초)); - 딜레이
+                    // setInterval(콜백함수, 시간(밀리초)); - 반복용
+                    // clearInterval(변수명) - setInterval 돌고 있는 거 멈추기
+                    t = setInterval(function() {
+                        // Math.random() 0.0 ~ 1.0
+                        var x = Math.random() * 1000
+                        var y = Math.random() * 1000
+                        $("img").css("top", y + "px").css("left", x + "px");
+                    }, 300);
+                });
+
+                $("img").click(function() {
+                    clearInterval(t);
+                });
+            });
+        </script>
+        <style>
+            h1 {
+                color: red;
+            }
+            img {
+                transition: all 0.3s ease-in;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>zzz</h1>
+        <button id="b1">글자색 바꾸기</button>
+        <button id="b2">글자색 바꾸기</button>
+        <button id="b3">글자색 바꾸기 + 배경색 추가</button>
+        <button id="b4">글자색 확인</button>
+        <hr>
+        <img src="android_normal.png">
+        <button id="b5">ㄱㄱ</button>
+    </body>
+</html>

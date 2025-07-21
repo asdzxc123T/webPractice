@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jQuery.js"></script>
+        <script>
+            $(function() {
+                // AJAX : 남의 서버에 있는 건 브라우저가 안 받아줌
+                // Cross-domain AJAX : 남의 데이터를 가져오는 AJAX
+                //      - 서버측에서 Access-Control-Allow-Origin 응답헤더 세팅해놨으면 가져올 수 있음
+                //      - Proxy 서버를 구현
+
+                $.ajax({
+                    // url: "주소(요청파라메터부분 빼고)",
+                    // data : {"변수명":값, "변수명":값, ...},
+                    // success : function(받아온 거) {
+                    // }
+                    url : "http://openapi.seoul.go.kr:8088/575a4655496b636839386f58586542/xml/RealtimeCityAir/1/25/",
+                    success : function(asd) {
+                        option = {
+                            theme: "light1", 
+                            animationEnabled: false,		
+                            title:{
+                                text: "미세먼지"
+                            },
+                            data: [{
+                                type: "stackedColumn",
+                                name: "미세먼지",
+                                showInLegend: "true",
+                                dataPoints: []
+                            },
+                            {
+                                type: "stackedColumn",
+                                name: "초미세먼지",
+                                showInLegend: "true",
+                                dataPoints: []
+                            }]
+                        };
+
+                        $(asd).find("row").each(function(i, r) {
+                            msrrgn_nm = $(r).find("MSRRGN_NM").text();
+                            msrste_nm = $(r).find("MSRSTE_NM").text();
+                            pm10 = $(r).find("PM10").text();
+                            pm25 = $(r).find("PM25").text();
+                            idex_nm = $(r).find("IDEX_NM").text();
+
+                            var td1 = $("<td></td>").text(msrrgn_nm);
+                            var td2 = $("<td></td>").text(msrste_nm);
+                            var td3 = $("<td></td>").text(pm10);
+                            var td4 = $("<td></td>").text(pm25);
+                            var td5 = $("<td></td>").text(idex_nm);
+                            var tr = $("<tr></tr>").append(td1, td2, td3, td4, td5);
+                            $("table").append(tr);
+
+                            $.each(option.data, function(i, d) {
+                                if (d.name == "미세먼지")
+                                    d.dataPoints.push({y : Number(pm10), label : msrste_nm});
+                                else
+                                    d.dataPoints.push({y : Number(pm25), label : msrste_nm});
+                            });
+                        });
+                        
+                        var chart = new CanvasJS.Chart("chartContainer", option);
+                        chart.render();
+                    }
+                });
+            });
+        </script>
+        <script src="https://cdn.canvasjs.com/canvasjs.min.js"> </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th>권역</th>
+                <th>구</th>
+                <th>미세먼지</th>
+                <th>초미세먼지</th>
+                <th>상태</th>
+            </tr>
+        </table>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    </body>
+</html>
